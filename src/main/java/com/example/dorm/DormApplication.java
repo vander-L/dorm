@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class DormApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(DormApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(DormApplication.class, args);
+    }
 
 }
