@@ -9,25 +9,29 @@ import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-@TableName("a_admin")
-public class Admin {
+@TableName("a_building")
+public class Building {
     @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
     private String name;
 
-    private Integer sex;
+    private Integer floorNum;
 
-    private String phone;
+    private Integer dormNum;
+
+    private Integer campusId;
+
+    private Integer adminId;
 
     @TableLogic
     private Integer deleted;
 
-    public Admin(String name, Integer sex, String phone) {
+    public Building(String name, Integer floorNum, Integer dormNum, Integer campusId, Integer adminId) {
         this.name = name;
-        this.sex = sex;
-        this.phone = phone;
+        this.floorNum = floorNum;
+        this.dormNum = dormNum;
+        this.campusId = campusId;
+        this.adminId = adminId;
     }
-
-
 }
