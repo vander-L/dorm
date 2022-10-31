@@ -1,4 +1,6 @@
 package com.example.dorm.service.Impl;
 
-public class RepairServiceImpl {
+import com.example.dorm.service.RepairService;
+
+public class RepairServiceImpl implements RepairService {
 }

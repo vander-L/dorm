@@ -1,4 +1,6 @@
 package com.example.dorm.service.Impl;
 
-public class CampusServiceImpl {
+import com.example.dorm.service.CampusService;
+
+public class CampusServiceImpl implements CampusService {
 }
