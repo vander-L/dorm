@@ -12,7 +12,7 @@ import java.util.Date;
 @Data
 @NoArgsConstructor
 @TableName("a_repair")
-public class repair {
+public class Repair {
     @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
@@ -31,7 +31,7 @@ public class repair {
     @TableLogic
     private Integer deleted;
 
-    public repair(String type, Date time, String reason, String solveInfo, String note, Integer dormId) {
+    public Repair(String type, Date time, String reason, String solveInfo, String note, Integer dormId) {
         this.type = type;
         this.time = time;
         this.reason = reason;
