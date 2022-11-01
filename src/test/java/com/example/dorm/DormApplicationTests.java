@@ -25,6 +25,8 @@ class DormApplicationTests {
         System.out.println(dataSource.getConnection());
 
         adminMapper.insert(new Admin("connery", 1, "15622113366"));
+
+
     }
 
 }

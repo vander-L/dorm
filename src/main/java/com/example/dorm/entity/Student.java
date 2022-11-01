@@ -39,6 +39,8 @@ public class Student {
     @TableLogic
     private Integer deleted;
 
+    private String password;
+
     public Student(String name, Integer sex, Integer grade, String dept, String pro, Integer cla, Integer phone, Date time, String feedback, Integer dormId) {
         this.name = name;
         this.sex = sex;

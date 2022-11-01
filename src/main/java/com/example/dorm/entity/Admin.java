@@ -23,6 +23,8 @@ public class Admin {
     @TableLogic
     private Integer deleted;
 
+    private String password;
+
     public Admin(String name, Integer sex, String phone) {
         this.name = name;
         this.sex = sex;
