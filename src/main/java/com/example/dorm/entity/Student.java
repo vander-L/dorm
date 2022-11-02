@@ -26,9 +26,9 @@ public class Student {
 
     private String pro;
 
-    private Integer cla;
+    private String cla;
 
-    private Integer phone;
+    private String phone;
 
     private Date time;
 
@@ -41,7 +41,12 @@ public class Student {
 
     private String password;
 
-    public Student(String name, Integer sex, Integer grade, String dept, String pro, Integer cla, Integer phone, Date time, String feedback, Integer dormId) {
+    private String email;
+
+    private String school;
+
+    public Student(Long id, String name, Integer sex, Integer grade, String dept, String pro, String cla, String phone, Date time, String feedback, Integer dormId ,String email, String school) {
+        this.id = id;
         this.name = name;
         this.sex = sex;
         this.grade = grade;
@@ -52,5 +57,7 @@ public class Student {
         this.time = time;
         this.feedback = feedback;
         this.dormId = dormId;
+        this.email = email;
+        this.school = school;
     }
 }

@@ -5,4 +5,6 @@ import com.example.dorm.mapper.StudentMapper;
 
 public interface StudentService {
     Student SelectById(long id);
+
+    void UpdateById(Student stu);
 }

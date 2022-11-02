@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 
@@ -21,7 +22,7 @@ public class LoginController {
     @Autowired
     StudentService studentService;
 
-    @PostMapping(value = "/login")
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String login(@RequestParam("username") String user,@RequestParam("password") String pwd, Model model, HttpServletRequest req){
         System.out.println(user);
         if (!StringUtils.isNumeric(user)){

@@ -16,4 +16,8 @@ public class StudentServiceImpl implements StudentService {
     public Student SelectById(long id){
         return studentMapper.selectById(id);
     }
+
+    public void UpdateById(Student stu){
+        studentMapper.updateById(stu);
+    }
 }

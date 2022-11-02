@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -7,18 +7,18 @@
   <script src="//unpkg.com/layui@2.6.8/dist/layui.js"></script>
 </head>
 <body>
-<form class="layui-form" action="">
+<form class="layui-form" th:action="@{/tochange}">
   <div class="layui-form-item">
     <label class="layui-form-label">电话号</label>
     <div class="layui-input-inline">
-      <input type="password" name="password" required lay-verify="required" placeholder="请输入修改后的手机号" autocomplete="off" class="layui-input">
+      <input type="password" name="phone" required lay-verify="required" placeholder="请输入修改后的手机号" autocomplete="off" class="layui-input">
     </div>
     <div class="layui-form-item">
     </div>
   <div class="layui-form-item">
     <label class="layui-form-label">邮箱</label>
     <div class="layui-input-inline">
-      <input type="password" name="password" required lay-verify="required" placeholder="请输入修改后的邮箱" autocomplete="off" class="layui-input">
+      <input type="password" name="email" required lay-verify="required" placeholder="请输入修改后的邮箱" autocomplete="off" class="layui-input">
     </div>
   </div>
   <div class="layui-form-item">
@@ -38,7 +38,7 @@
   </div>
   <div class="layui-form-item">
     <div class="layui-input-block">
-      <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+      <button class="layui-btn" lay-submit >立即提交</button>
       <button type="reset" class="layui-btn layui-btn-primary">重置</button>
     </div>
   </div>
