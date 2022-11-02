@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -21,7 +22,8 @@ public class LoginController {
     StudentService studentService;
 
     @RequestMapping("/login")
-    public String login(String user, String pwd, Model model, HttpServletRequest req){
+    public String login(@RequestParam("username") String user,@RequestParam("password") String pwd, Model model, HttpServletRequest req){
+        System.out.println(user);
         if (!StringUtils.isNumeric(user)){
             model.addAttribute("msg","用户名只能为数字组合");
             return "login";
@@ -32,7 +34,7 @@ public class LoginController {
         }else {
             HttpSession session = req.getSession();
             session.setAttribute("id",id);
-            return "index";
+            return "redirect:index";
         }
         return "login";
     }
