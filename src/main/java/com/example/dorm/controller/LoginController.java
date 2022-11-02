@@ -34,7 +34,7 @@ public class LoginController {
         }else {
             HttpSession session = req.getSession();
             session.setAttribute("id",id);
-            model.addAttribute("id",id);
+            model.addAttribute("stu",studentService.SelectById(id));
 
             return "index";
         }
