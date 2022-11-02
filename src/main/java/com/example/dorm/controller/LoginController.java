@@ -7,12 +7,12 @@ import com.example.dorm.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.servlet.http.HttpServlet;
+
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 
@@ -21,7 +21,7 @@ public class LoginController {
     @Autowired
     StudentService studentService;
 
-    @RequestMapping("/login")
+    @PostMapping(value = "/login")
     public String login(@RequestParam("username") String user,@RequestParam("password") String pwd, Model model, HttpServletRequest req){
         System.out.println(user);
         if (!StringUtils.isNumeric(user)){
@@ -34,7 +34,9 @@ public class LoginController {
         }else {
             HttpSession session = req.getSession();
             session.setAttribute("id",id);
-            return "redirect:index";
+            model.addAttribute("id",id);
+
+            return "index";
         }
         return "login";
     }

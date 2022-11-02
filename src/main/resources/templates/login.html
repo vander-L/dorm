@@ -9,7 +9,7 @@
 <body>
 <div>
     <div class="layui-container">
-        <form class="layui-form" th:action="@{/login}">
+        <form class="layui-form" th:action="@{/login}" th:method="post">
             <p th:text="${msg}" class="color:red"></p>
             <div class="layui-form-item">
                 <label class="layui-form-label">用户名：</label>
