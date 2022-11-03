@@ -1,0 +1,83 @@
+*{
+    font-family: Helvetica Neue,Helvetica,PingFang SC,Tahoma,Arial,sans-serif;
+}
+
+.top-comm{
+    color: white;
+    height: 60px;
+    width: 100%;
+    background-color: #393D49;
+    display: flex;
+    justify-content: center;
+}
+.top-comm .nav{
+    width: 70%;
+    height: 60px;
+    display: flex;
+}
+.top-comm .nav .nav-left{
+    width: 30%;
+    display: flex;
+    align-items: center;
+}
+.top-comm .nav .nav-right{
+    width: 70%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.top-comm .nav .nav-right div{
+    width: 15%;
+}
+.icon{
+    color: white;
+}
+
+.container{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.body-comm{
+    width: 70%;
+    height: 100%;
+    display: flex;
+}
+.left-comm{
+    width: 15%;
+    border-right: 0.5px;
+    border-right-style: solid;
+    border-right-color: #e4e4eb;
+}
+.left-top{
+    margin: 5px;
+    color: #00000059;
+}
+.left-bottom div{
+    height: 50px;
+    line-height: 50px;
+    margin-left: 15px;
+}
+.center-comm{
+    width: 70%;
+}
+.right-comm{
+    width: 15%;
+}
+.right-comm div{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    display: flex;
+    margin-left: 10px;
+}
+.right-comm div:first-child{
+    margin-left: 20%;
+    height: 100px;
+    margin-bottom: 40px;
+}
+.right-comm div:first-child img{
+    border-radius: 50%;
+    width: 60%;
+}
