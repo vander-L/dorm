@@ -12,19 +12,18 @@
   </style>
 </head>
 <body>
-<form class="layui-form" th:action="@{/form}" th:method="post">
-  <p th:text="${frm}" class="color:red"></p>
+<form class="layui-form" th:action="@{/replace}" th:method="post">
   <div class="layui-form-item">
     <label class="layui-form-label">姓名</label>
     <div class="layui-input-inline">
-      <input type="password" name="password" required lay-verify="required" placeholder="请输入姓名" autocomplete="off" class="layui-input">
+      <input type="text" name="name" required lay-verify="required" placeholder="请输入姓名" autocomplete="off" class="layui-input">
     </div>
     <div class="layui-form-mid layui-word-aux"></div>
   </div>
   <div class="layui-form-item">
     <label class="layui-form-label">学号</label>
     <div class="layui-input-inline">
-      <input type="password" name="password" required lay-verify="required" placeholder="请输入学号" autocomplete="off" class="layui-input">
+      <input type="text" name="no" required lay-verify="required" placeholder="请输入学号" autocomplete="off" class="layui-input">
     </div>
     <div class="layui-form-mid layui-word-aux"></div>
   </div>
@@ -44,14 +43,14 @@
   <div class="layui-form-item">
     <label class="layui-form-label">现寝室号</label>
     <div class="layui-input-inline">
-      <input type="password" name="dorm1" required lay-verify="required" placeholder="请输入寝室号" autocomplete="off" class="layui-input">
+      <input type="text" name="dorm1" required lay-verify="required" placeholder="请输入寝室号" autocomplete="off" class="layui-input">
     </div>
     <div class="layui-form-mid layui-word-aux"></div>
   </div>
   <div class="layui-form-item">
     <label class="layui-form-label">换寝室栋号</label>
     <div class="layui-input-block zzz">
-      <select name="city" lay-verify="required">
+      <select name="city1" lay-verify="required">
         <option value=""></option>
         <option value="0">1栋</option>
         <option value="1">2栋</option>
@@ -64,7 +63,7 @@
   <div class="layui-form-item">
     <label class="layui-form-label">更换寝室号</label>
     <div class="layui-input-inline">
-      <input type="password" name="dorm2" required lay-verify="required" placeholder="请输入寝室号" autocomplete="off" class="layui-input">
+      <input type="text" name="dorm2" required lay-verify="required" placeholder="请输入寝室号" autocomplete="off" class="layui-input">
     </div>
     <div class="layui-form-mid layui-word-aux"></div>
   </div>

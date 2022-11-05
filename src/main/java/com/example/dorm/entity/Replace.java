@@ -30,12 +30,25 @@ public class Replace {
     @TableLogic
     private Integer deleted;
 
-    public Replace(Integer studentId, String studentName, Integer beforeDormId, String beforeDormName, Integer afterDormId, String afterDormName) {
+    private String afterBuildingName;
+
+    private String beforeBuildingName;
+
+    private String beforeBuildingId;
+
+    private String afterBuildingId;
+
+    public Replace(Integer studentId, String studentName, Integer beforeDormId, String beforeDormName, Integer afterDormId, String afterDormName, String afterBuildingName, String beforeBuildingName, String beforeBuildingId, String afterBuildingId) {
         this.studentId = studentId;
         this.studentName = studentName;
         this.beforeDormId = beforeDormId;
         this.beforeDormName = beforeDormName;
         this.afterDormId = afterDormId;
         this.afterDormName = afterDormName;
+        this.afterBuildingName = afterBuildingName;
+        this.beforeBuildingName = beforeBuildingName;
+        this.beforeBuildingId = beforeBuildingId;
+        this.afterBuildingId = afterBuildingId;
+
     }
 }

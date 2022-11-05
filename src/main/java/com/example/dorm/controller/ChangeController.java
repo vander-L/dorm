@@ -16,18 +16,16 @@ public class ChangeController {
     @Autowired
     StudentService studentService;
 
-    @RequestMapping(value="/tochange")
-    public String change(String phone, String email, String school, String desc, HttpServletRequest req, HttpServletResponse resp){
+    @RequestMapping( value = "/tochange")
+    public String change(String phone, String email, String pwd, String school, String desc, HttpServletRequest req, HttpServletResponse resp){
         Long id = Long.parseLong(req.getSession().getAttribute("id").toString());
-        System.out.println(req);
-        System.out.println(resp);
-        System.out.println(id);
         Student student = new Student();
         student.setId(id);
         student.setFeedback(desc);
         student.setEmail(email);
         student.setSchool(school);
         student.setPhone(phone);
+        student.setPassword(pwd);
         studentService.UpdateById(student);
         return "redirect:index";
     }
