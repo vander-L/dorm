@@ -19,13 +19,7 @@ class DormApplicationTests {
     AdminMapper adminMapper;
 
     @Test
-    void contextLoads() throws SQLException {
-
-        System.out.println(dataSource.getClass());
-        System.out.println(dataSource.getConnection());
-
-        adminMapper.insert(new Admin("connery", 1, "15622113366"));
-
+    void contextLoads() {
 
     }
 
