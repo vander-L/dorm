@@ -21,11 +21,22 @@ public class ChangeController {
         Long id = Long.parseLong(req.getSession().getAttribute("id").toString());
         Student student = new Student();
         student.setId(id);
-        student.setFeedback(desc);
-        student.setEmail(email);
-        student.setSchool(school);
-        student.setPhone(phone);
-        student.setPassword(pwd);
+        if (!desc.isEmpty()) {
+            student.setFeedback(desc);
+        }
+        if(!email.isEmpty()) {
+            student.setEmail(email);
+        }
+        if(!school.isEmpty()) {
+            student.setSchool(school);
+        }
+        if(!phone.isEmpty()) {
+            student.setPhone(phone);
+        }
+        if(!pwd.isEmpty()) {
+            student.setPassword(pwd);
+        }
+        System.out.println(student);
         studentService.UpdateById(student);
         return "redirect:index";
     }
