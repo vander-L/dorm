@@ -3,20 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="../static/css/layui.css">
+    <link rel="stylesheet" href="../static/css/common.css">
 </head>
 <body>
-<div class="top">
-    <div>
-
+<div th:replace="common::top-comm"></div>
+<div class="container">
+    <div class="body-comm">
+        <div th:replace="common::left-comm(${stu})"></div>
+        <div class="center-comm">
+            <div class="layui-font-16">学生管理系统</div>
+        </div>
+        <div th:replace="common::right-comm(${stu})"></div>
     </div>
-    <div>
-
-    </div>
-</div>
-<div>
-    <span>
-
-    </span>
 </div>
 </body>
 </html>
