@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 
@@ -24,7 +25,7 @@ public class LoginController {
     StudentService studentService;
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public String login(@RequestParam("username") String user,@RequestParam("password") String pwd, Model model, HttpServletRequest req){
+    public String login(@RequestParam("username") String user, @RequestParam("password") String pwd, Model model, HttpServletRequest req, HttpServletResponse resp){
         System.out.println(user);
         if (!StringUtils.isNumeric(user)){
             model.addAttribute("msg","用户名只能为数字组合");
@@ -45,5 +46,7 @@ public class LoginController {
         }
         return "login";
     }
+
+
 
 }
