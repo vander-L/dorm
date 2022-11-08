@@ -24,14 +24,14 @@
   <div class="layui-form-item">
     <label class="layui-form-label">联系方式</label>
     <div class="layui-input-inline">
-      <input type="text" name="id" required lay-verify="required" placeholder="请输入学号" autocomplete="off" class="layui-input">
+      <input type="text" name="num" required lay-verify="required" placeholder="请输入学号" autocomplete="off" class="layui-input">
     </div>
     <div class="layui-form-mid layui-word-aux"></div>
   </div>
   <div class="layui-form-item">
     <label class="layui-form-label">楼栋号</label>
     <div class="layui-input-block zzz">
-      <select name="city" lay-verify="required">
+      <select name="dorm1" lay-verify="required">
         <option value=""></option>
         <option value="0">1栋</option>
         <option value="1">2栋</option>
@@ -42,31 +42,58 @@
     </div>
   </div>
   <div class="layui-form-item">
-    <label class="layui-form-label">寝室号</label>
-    <div class="layui-input-inline">
-      <input type="text" name="dorm1" required lay-verify="required" placeholder="请输入寝室号" autocomplete="off" class="layui-input">
+    <label class="layui-form-label">楼栋号</label>
+    <div class="layui-input-block zzz">
+      <select name="dorm2" lay-verify="required">
+        <option value=""></option>
+        <option value="0">101</option>
+        <option value="1">102</option>
+        <option value="2">103</option>
+        <option value="3">104</option>
+        <option value="4">105</option>
+        <option value="5">106</option>
+        <option value="6">107</option>
+        <option value="7">108</option>
+        <option value="8">109</option>
+        <option value="9">110</option>
+      </select>
     </div>
-    <div class="layui-form-mid layui-word-aux"></div>
+  </div>
+    <div class="layui-form-small layui-word-aux"></div>
   </div>
   <div class="layui-form-item">
     <label class="layui-form-label">报修类型</label>
     <div class="layui-input-block zzz">
-      <select name="city" lay-verify="required">
+      <select name="type" lay-verify="required">
         <option value=""></option>
-        <option value="0">1栋</option>
-        <option value="1">2栋</option>
-        <option value="2">3栋</option>
-        <option value="3">4栋</option>
-        <option value="4">5栋</option>
+        <option value="0">水电</option>
+        <option value="1">维修</option>
+        <option value="2">泥工</option>
+        <option value="3">直饮水</option>
       </select>
     </div>
   </div>
   <div class="layui-form-item layui-form-text">
     <label class="layui-form-label">详细描述</label>
     <div class="layui-input-block">
-      <textarea name="desc" placeholder="请输入保修详情" class="layui-textarea"></textarea>
+      <textarea name="reason" placeholder="请输入保修详情" class="layui-textarea"></textarea>
     </div>
   </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">备注</label>
+    <div class="layui-input-inline">
+      <input type="text" name="note" required lay-verify="required" placeholder="选填" autocomplete="off" class="layui-input">
+    </div>
+  </div>
+  <div class="layui-form-small layui-word-aux"></div>
+  </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label">保修时间</label>
+      <div class="layui-input-inline" style="width: 40%">
+        <input type="text" name="time" required lay-verify="required" placeholder="请输入上门保修时间（格式：20xx-10-xx 15：00）" autocomplete="off" class="layui-input">
+      </div>
+      <div class="layui-form-mid layui-word-aux"></div>
+    </div>
   <div class="layui-form-item">
     <div class="layui-input-block">
       <button class="layui-btn" lay-submit >立即提交</button>
