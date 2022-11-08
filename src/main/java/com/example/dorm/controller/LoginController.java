@@ -2,16 +2,14 @@ package com.example.dorm.controller;
 
 
 
+import com.alibaba.fastjson2.JSON;
 import com.example.dorm.entity.Student;
 import org.apache.commons.lang3.StringUtils;
 import com.example.dorm.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 
 import javax.servlet.http.HttpServletRequest;
@@ -25,8 +23,7 @@ public class LoginController {
     StudentService studentService;
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public String login(@RequestParam("username") String user, @RequestParam("password") String pwd, Model model, HttpServletRequest req, HttpServletResponse resp){
-        System.out.println(user);
+    public String login(@RequestParam("username") String user, @RequestParam("password") String pwd, Model model, HttpServletRequest req){
         if (!StringUtils.isNumeric(user)){
             model.addAttribute("msg","用户名只能为数字组合");
             return "login";
@@ -38,15 +35,21 @@ public class LoginController {
             HttpSession session = req.getSession();
             session.setAttribute("id",id);
             model.addAttribute("stu",studentService.SelectById(id));
-            session.setAttribute("name",studentService.SelectById(id).getName());
-            session.setAttribute("cla",studentService.SelectById(id).getCla());
-            session.setAttribute("dept",studentService.SelectById(id).getDept());
-            session.setAttribute("pro",studentService.SelectById(id).getPro());
             return "index";
         }
         return "login";
     }
 
+    @RequestMapping("/stuData")
+    @ResponseBody
+    public String stuData(HttpServletRequest req){
+        return JSON.toJSONString(studentService.SelectById((Long)req.getSession().getAttribute("id")));
+    }
 
+    @PostMapping ("/logout")
+    public String logout(HttpServletRequest req){
+        req.getSession().invalidate();
+        return "login";
+    }
 
 }

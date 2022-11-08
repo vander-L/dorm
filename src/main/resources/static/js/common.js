@@ -3,9 +3,21 @@ let stuId = document.getElementById("stuId")
 let stuCla = document.getElementById("stuCla")
 let stuDept = document.getElementById("stuDept")
 
-stuName.innerHTML = sessionStorage.getItem("name")
-stuId.innerHTML = sessionStorage.getItem("id")
-stuCla.innerHTML = sessionStorage.getItem("cla")
-stuDept.innerHTML = sessionStorage.getItem("dept")
+$.ajax({
+    url: '/stuData',
+    async: false,
+    dataType: 'json',
+    type: 'get',
+    success: function (data){
+        stuName.innerHTML = data.name
+        stuId.innerHTML = data.id
+        stuCla.innerHTML = data.cla
+        stuDept.innerHTML = data.dept
+    }
+})
 
-console.log(stuName.innerHTML)
+let logout = function (){
+    alert("注销成功！")
+    $("#logout-form").submit()
+    return false
+}
