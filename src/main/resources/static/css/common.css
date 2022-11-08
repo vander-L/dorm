@@ -16,6 +16,8 @@
     display: flex;
 }
 .top-comm .nav .nav-left{
+    letter-spacing: 3px;
+    font-size: 20px;
     width: 30%;
     display: flex;
     align-items: center;
@@ -26,6 +28,7 @@
     justify-content: flex-end;
     align-items: center;
 }
+
 .top-comm .nav .nav-right div{
     width: 15%;
 }
@@ -53,17 +56,22 @@
 .left-top{
     margin: 5px;
     color: #00000059;
+    font-size: 17px;
+    text-align: center;
+    letter-spacing: 3px;
 }
 .left-bottom div{
     height: 50px;
     line-height: 50px;
-    margin-left: 15px;
+    margin-left: 50px;
+    font-size: 14px;
 }
 .center-comm{
     width: 70%;
 }
 .right-comm{
     width: 15%;
+    border-left: 1px solid #e4e4eb;
 }
 .right-comm div{
     width: 100%;
@@ -78,6 +86,6 @@
     margin-bottom: 40px;
 }
 .right-comm div:first-child img{
-    border-radius: 50%;
+    border-radius: 20px;
     width: 60%;
 }
