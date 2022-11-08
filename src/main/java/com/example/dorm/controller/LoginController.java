@@ -1,8 +1,7 @@
 package com.example.dorm.controller;
 
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
+
 import com.example.dorm.entity.Student;
 import org.apache.commons.lang3.StringUtils;
 import com.example.dorm.service.StudentService;
@@ -38,7 +37,10 @@ public class LoginController {
             HttpSession session = req.getSession();
             session.setAttribute("id",id);
             model.addAttribute("stu",studentService.SelectById(id));
-
+            session.setAttribute("name",studentService.SelectById(id).getName());
+            session.setAttribute("cla",studentService.SelectById(id).getCla());
+            session.setAttribute("dept",studentService.SelectById(id).getDept());
+            session.setAttribute("pro",studentService.SelectById(id).getPro());
             return "index";
         }
         return "login";
