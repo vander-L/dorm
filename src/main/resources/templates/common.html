@@ -19,13 +19,13 @@
 </div>
 <div class="container">
     <div class="body-comm">
-        <div class="left-comm" th:fragment="left-comm(stu)">
+        <div class="left-comm" th:fragment="left-comm">
             <div class="left-top">
                 <div>学生端功能</div>
                 <hr>
             </div>
             <div class="left-bottom">
-                <div><a th:href="@{/index(stu=${stu})}">系统介绍</a></div>
+                <div><a th:href="@{/index}">系统介绍</a></div>
                 <div><a th:href="@{/change}">修改个人信息</a></div>
                 <div><a href="">更换宿舍</a></div>
                 <div><a href="">生活缴费</a></div>
