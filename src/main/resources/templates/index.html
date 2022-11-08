@@ -5,6 +5,7 @@
     <title>Title</title>
     <link rel="stylesheet" href="../static/css/layui.css">
     <link rel="stylesheet" href="../static/css/common.css">
+    <script src="../static/js/common.js"></script>
 </head>
 <body>
 <div th:replace="common::top-comm"></div>
@@ -14,7 +15,7 @@
         <div class="center-comm">
             <div class="layui-font-16">学生管理系统</div>
         </div>
-        <div th:replace="common::right-comm(${stu})"></div>
+        <div th:replace="common::right-comm"></div>
     </div>
 </div>
 </body>
