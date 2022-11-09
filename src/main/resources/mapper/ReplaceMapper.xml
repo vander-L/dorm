@@ -13,4 +13,9 @@
         FROM A_DORM
         WHERE NAME = #{DormName} AND BUILDING_ID = #{BuildingId}
     </select>
+    <select id="getAllHaveNullDorm" parameterType="integer" resultType="dorm">
+        select *
+        from A_DORM
+        where BUILDING_ID = #{buildingId} AND NUM_LEFT != 0;
+    </select>
 </mapper>

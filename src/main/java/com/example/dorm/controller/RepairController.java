@@ -14,8 +14,9 @@ public class RepairController {
     @Autowired
     RepairService repairService;
 
-    @RequestMapping(value = "torepair")
+    @RequestMapping(value = "/toRepair")
     public String repair(String name, String num, String dorm1, String dorm2, String type, String reason, String note, String time, HttpServletRequest req){
+        System.out.println(dorm1);
         Repair repair = new Repair();
         BuildingIdDormName buildingIdDormName = new BuildingIdDormName();
         Long id = Long.parseLong(req.getSession().getAttribute("id").toString());
@@ -28,10 +29,10 @@ public class RepairController {
         repair.setType(type);
         repair.setTime(time);
         repair.setName(name);
-        repair.setPhone(Integer.parseInt(num));
+        repair.setPhone(num);
         repair.setDormId(dormId);
         repairService.insertRepair(repair);
-        return "index";
+        return "student/index";
 
     }
 }

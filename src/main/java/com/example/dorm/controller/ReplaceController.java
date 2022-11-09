@@ -6,14 +6,15 @@ import com.example.dorm.entity.Replace;
 import com.example.dorm.service.ReplaceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
-public class ReplaceController {
+public class ReplaceController{
     @Autowired
     ReplaceService replaceService;
 
 
 
-    @RequestMapping(value = "/toreplace")
+    @RequestMapping(value = "/toReplace")
     public String replace(String name, String no, String city, String dorm1, String city1, String dorm2){
         Replace replace = new Replace();
         BuildingIdDormName beforeBuildingIdDormName = new BuildingIdDormName();
@@ -37,7 +38,13 @@ public class ReplaceController {
         replace.setBeforeDormId(beforeDormId);
         replace.setAfterDormId(afterDormId);
         replaceService.insertReplace(replace);
-        return "index";
+        return "student/index";
+    }
+
+    @RequestMapping("/replaceData")
+    @ResponseBody
+    public String replaceData(){
+        return null;
     }
 
 }

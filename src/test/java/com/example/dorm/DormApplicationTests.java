@@ -5,6 +5,8 @@ import com.example.dorm.entity.Admin;
 import com.example.dorm.entity.BuildingIdDormName;
 import com.example.dorm.mapper.AdminMapper;
 import com.example.dorm.mapper.RepairMapper;
+import com.example.dorm.service.RepairService;
+import com.example.dorm.service.ReplaceService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -24,8 +26,13 @@ class DormApplicationTests {
     @Autowired
     RepairMapper repairMapper;
 
+    @Autowired
+    ReplaceService replaceService;
+
     @Test
     void contextLoads() {
+
+        replaceService.getAllBuilding().forEach(System.out::println);
     }
 
 }

@@ -33,9 +33,9 @@ public class Repair {
 
     private String name;
 
-    private Integer phone;
+    private String phone;
 
-    public Repair(String type, String time, String reason, String solveInfo, String note, Integer dormId, String name, Integer phone) {
+    public Repair(String type, String time, String reason, String solveInfo, String note, Integer dormId, String name, String phone) {
         this.type = type;
         this.time = time;
         this.reason = reason;
