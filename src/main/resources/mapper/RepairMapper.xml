@@ -2,15 +2,15 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.dorm.entity.Repair">
+<mapper namespace="com.example.dorm.mapper.RepairMapper">
     <select id="getBuildingIdByName" parameterType="String" resultType="Integer">
         SELECT ID
         FROM A_BUILDING
-        WHERE NAME = #{name};
+        WHERE NAME = #{name}
     </select>
     <select id="getDormIdByName" parameterType="BuildingIdDormName" resultType="Integer">
         SELECT ID
         FROM A_DORM
-        WHERE NAME = #{DormName} AND BUILDING_ID = #{BuildingId};
+        WHERE NAME = #{DormName} AND BUILDING_ID = #{BuildingId}
     </select>
 </mapper>

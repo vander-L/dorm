@@ -2,6 +2,7 @@ package com.example.dorm;
 
 import com.alibaba.fastjson2.JSON;
 import com.example.dorm.entity.Admin;
+import com.example.dorm.entity.BuildingIdDormName;
 import com.example.dorm.mapper.AdminMapper;
 import com.example.dorm.mapper.RepairMapper;
 import org.junit.jupiter.api.Test;
@@ -25,7 +26,6 @@ class DormApplicationTests {
 
     @Test
     void contextLoads() {
-        System.out.println(repairMapper.getBuildingIdByName("25"));
     }
 
 }

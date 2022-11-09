@@ -1,5 +1,6 @@
 package com.example.dorm.service.Impl;
 
+import com.example.dorm.entity.BuildingIdDormName;
 import com.example.dorm.entity.Repair;
 import com.example.dorm.mapper.RepairMapper;
 import com.example.dorm.service.RepairService;
@@ -14,5 +15,13 @@ public class RepairServiceImpl implements RepairService {
 
     public void insertRepair(Repair repair){
         repairMapper.insert(repair);
+    }
+
+    public Integer getBuildingIdByName(String name){
+        return repairMapper.getBuildingIdByName(name);
+    }
+
+    public Integer getDormIdByName(BuildingIdDormName buildingIdDormName){
+        return repairMapper.getDormIdByName(buildingIdDormName);
     }
 }
