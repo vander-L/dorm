@@ -30,7 +30,7 @@ public class RepairController {
         repair.setName(name);
         repair.setPhone(Integer.parseInt(num));
         repair.setDormId(dormId);
-
+        repairService.insertRepair(repair);
         return "index";
 
     }

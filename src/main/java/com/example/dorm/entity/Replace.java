@@ -34,11 +34,11 @@ public class Replace {
 
     private String beforeBuildingName;
 
-    private String beforeBuildingId;
+    private Integer beforeBuildingId;
 
-    private String afterBuildingId;
+    private Integer afterBuildingId;
 
-    public Replace(Integer studentId, String studentName, Integer beforeDormId, String beforeDormName, Integer afterDormId, String afterDormName, String afterBuildingName, String beforeBuildingName, String beforeBuildingId, String afterBuildingId) {
+    public Replace(Integer studentId, String studentName, Integer beforeDormId, String beforeDormName, Integer afterDormId, String afterDormName, String afterBuildingName, String beforeBuildingName, Integer beforeBuildingId, Integer afterBuildingId) {
         this.studentId = studentId;
         this.studentName = studentName;
         this.beforeDormId = beforeDormId;
