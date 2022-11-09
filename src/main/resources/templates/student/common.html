@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="../static/css/common.css">
-    <link rel="stylesheet" href="../static/layui/css/layui.css">
-    <script src="../static/js/common.js"></script>
+    <link rel="stylesheet" href="../../static/css/common.css">
+    <link rel="stylesheet" href="../../static/layui/css/layui.css">
+    <script src="../../static/js/common.js"></script>
 </head>
 <body>
 <div class="top-comm" th:fragment="top-comm">
@@ -32,14 +32,14 @@
                 <div><a th:href="@{/index}">系统介绍</a></div>
                 <div><a th:href="@{/change}">修改个人信息</a></div>
                 <div><a th:href="@{/dorm}">更换宿舍</a></div>
-                <div><a th:href="@{/}">生活缴费</a></div>
+                <div><a th:href="@{/static}">生活缴费</a></div>
                 <div><a th:href="@{/repair}">宿舍报修</a></div>
             </div>
         </div>
         <div class="center-comm">
         </div>
         <div class="right-comm" th:fragment="right-comm">
-            <div><img src="../static/img/logo.png" alt=""></div>
+            <div><img src="../../static/img/logo.png" alt=""></div>
             <div><span>姓名:</span><span id="stuName"></span></div>
             <div><span>学号:</span><span id="stuId"></span></div>
             <div><span>班级:</span><span id="stuCla"></span></div>

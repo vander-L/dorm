@@ -3,7 +3,6 @@ package com.example.dorm.controller;
 
 
 import com.alibaba.fastjson2.JSON;
-import com.example.dorm.entity.Student;
 import org.apache.commons.lang3.StringUtils;
 import com.example.dorm.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +12,6 @@ import org.springframework.web.bind.annotation.*;
 
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 
@@ -35,7 +33,7 @@ public class LoginController {
             HttpSession session = req.getSession();
             session.setAttribute("id",id);
             model.addAttribute("stu",studentService.SelectById(id));
-            return "index";
+            return "student/index";
         }
         return "login";
     }

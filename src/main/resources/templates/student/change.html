@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>Title</title>
-  <link rel="stylesheet" href="../static/layui/css/layui.css">
-  <link rel="stylesheet" href="../static/css/common.css">
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <link rel="stylesheet" href="../../static/layui/css/layui.css">
+  <link rel="stylesheet" href="../../static/css/common.css">
 </head>
 
 <body>
-<div th:replace="common::top-comm"></div>
+<div th:replace="student/common::top-comm"></div>
 <div class="container">
   <div class="body-comm">
-    <div th:replace="common::left-comm"></div>
+    <div th:replace="student/common::left-comm"></div>
     <div class="center-comm">
       <form id="login" class="layui-form" th:action="@{/tochange}">
         <div class="layui-form-item">
@@ -21,6 +21,14 @@
           </div>
           <div id="pp" class="layui-form-mid layui-word-aux">非必填</div>
           <div id="phoneMsg" class="layui-form-mid layui-word-aux"></div>
+        </div>
+        <div class="layui-form-item">
+          <label class="layui-form-label">邮箱</label>
+          <div class="layui-input-inline">
+            <input id="email" type="text" name="email" placeholder="请输入修改后的邮箱" autocomplete="off" class="layui-input">
+          </div>
+          <div class="layui-form-mid layui-word-aux">非必填</div>
+          <div id="emailMsg" class="layui-form-mid layui-word-aux"></div>
         </div>
         <div class="layui-form-item">
           <label class="layui-form-label">密码</label>
@@ -39,6 +47,19 @@
           <div id="pwdAgainMsg" class="layui-form-mid layui-word-aux"></div>
         </div>
         <div class="layui-form-item">
+          <label class="layui-form-label">在校状态</label>
+          <div class="layui-input-block">
+            <input type="radio" name="school" value="离校" title="离校">
+            <input type="radio" name="school" value="在校" title="在校" checked>
+          </div>
+        </div>
+        <div class="layui-form-item layui-form-text">
+          <label class="layui-form-label">意见反馈</label>
+          <div class="layui-input-block">
+            <textarea name="desc" placeholder="请输入修改意见" class="layui-textarea"></textarea>
+          </div>
+        </div>
+        <div class="layui-form-item">
           <div class="layui-input-block">
             <button class="layui-btn">立即提交</button>
             <button type="reset" class="layui-btn layui-btn-primary">重置</button>
@@ -46,12 +67,12 @@
         </div>
       </form>
     </div>
-    <div th:replace="common::right-comm"></div>
+    <div th:replace="student/common::right-comm"></div>
   </div>
 </div>
-<script src="../static/layui/layui.js"></script>
+<script src="../../static/layui/layui.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="../static/js/common.js"></script>
+<script src="../../static/js/common.js"></script>
 <script type="text/javascript">
   //Demo
   layui.use('form', function(){
@@ -85,6 +106,14 @@
   }
 
   // 判断邮箱
+  email.onblur = function (){
+    let emailReg = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/g;
+    if (email.value !== "" && !emailReg.test(email.value)){
+      emailMsg.innerHTML = "邮箱错误"
+    }else{
+      emailMsg.innerHTML = ""
+    }
+  }
 
   // 判断密码
   pwd.onblur = function (){
