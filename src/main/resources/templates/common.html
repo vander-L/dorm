@@ -11,7 +11,7 @@
 <div class="top-comm" th:fragment="top-comm">
     <div class="nav">
         <div class="nav-left">
-            <div>学生管理系统</div>
+            <div>学生宿舍管理系统</div>
         </div>
         <div style="display: none">
             <form id="logout-form" th:action="@{/logout}" method="post"></form>
@@ -31,9 +31,9 @@
             <div class="left-bottom">
                 <div><a th:href="@{/index}">系统介绍</a></div>
                 <div><a th:href="@{/change}">修改个人信息</a></div>
-                <div><a href="">更换宿舍</a></div>
-                <div><a href="">生活缴费</a></div>
-                <div><a href="">宿舍报修</a></div>
+                <div><a th:href="@{/dorm}">更换宿舍</a></div>
+                <div><a th:href="@{/}">生活缴费</a></div>
+                <div><a th:href="@{/repair}">宿舍报修</a></div>
             </div>
         </div>
         <div class="center-comm">
