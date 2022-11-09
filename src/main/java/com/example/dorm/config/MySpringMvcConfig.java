@@ -13,6 +13,9 @@ public class MySpringMvcConfig implements WebMvcConfigurer {
         registry.addViewController("/").setViewName("login");
         registry.addViewController("/index").setViewName("student/index");
         registry.addViewController("/change").setViewName("student/change");
+        registry.addViewController("/dorm").setViewName("student/dorm");
+//        registry.addViewController("/change").setViewName("student/change");
+        registry.addViewController("/repair").setViewName("student/repair");
     }
 
     @Override
