@@ -12,8 +12,7 @@
   </style>
 </head>
 <body>
-<form class="layui-form" th:action="@{/form}" th:method="post">
-  <p th:text="${frm}" class="color:red"></p>
+<form class="layui-form" th:action="@{/torepair}" th:method="post">
   <div class="layui-form-item">
     <label class="layui-form-label">姓名</label>
     <div class="layui-input-inline">
@@ -24,7 +23,7 @@
   <div class="layui-form-item">
     <label class="layui-form-label">联系方式</label>
     <div class="layui-input-inline">
-      <input type="text" name="num" required lay-verify="required" placeholder="请输入学号" autocomplete="off" class="layui-input">
+      <input type="text" name="num" required lay-verify="required" placeholder="请输入手机号" autocomplete="off" class="layui-input">
     </div>
     <div class="layui-form-mid layui-word-aux"></div>
   </div>

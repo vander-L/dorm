@@ -18,7 +18,7 @@ public class Repair {
 
     private String type;
 
-    private Date time;
+    private String time;
 
     private String reason;
 
@@ -31,12 +31,18 @@ public class Repair {
     @TableLogic
     private Integer deleted;
 
-    public Repair(String type, Date time, String reason, String solveInfo, String note, Integer dormId) {
+    private String name;
+
+    private Integer phone;
+
+    public Repair(String type, String time, String reason, String solveInfo, String note, Integer dormId, String name, Integer phone) {
         this.type = type;
         this.time = time;
         this.reason = reason;
         this.solveInfo = solveInfo;
         this.note = note;
         this.dormId = dormId;
+        this.name = name;
+        this.phone = phone;
     }
 }
