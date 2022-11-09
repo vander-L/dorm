@@ -3,34 +3,6 @@ layui.use(['form', 'layer', 'jquery'], function () {
         layer = parent.layer === undefined ? layui.layer : top.layer
     $ = layui.jquery;
 
-    //登录按钮
-    form.on('submit(login)', function (result) {
-        var btn = $(this);
-        //设置登录按钮  为不可点击
-        btn.text("登录中...").attr("disabled", "disabled").addClass("layui-disabled");
-        $.ajax({
-            url: '/login/login',
-            contentType: "application/json",
-            dataType: 'json',
-            type:"post",
-            data: JSON.stringify(result.field),
-            success: function (res) {
-                //失败，返回错误信息
-                if (res.code!=200) {
-                    layer.msg(res.msg);
-                    //设置登录按钮  为不可点击
-                    btn.text("登录").attr("disabled", false).removeClass("layui-disabled");
-                    $(function () {
-                        changeImg();
-                    })
-                } else {
-                    //成功，跳转到首页
-                    layer.msg(res.msg);
-                    location.href = "/";
-                }
-            }
-        })
-    });
 
     //表单输入效果
     $(".loginBody .input-item").click(function (e) {
