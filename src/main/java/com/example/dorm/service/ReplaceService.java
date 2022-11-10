@@ -13,6 +13,4 @@ public interface ReplaceService {
     public Integer getBuildingIdByName(String name);
 
     public Integer getDormIdByName(BuildingIdDormName buildingIdDormName);
-
-    public List<List<Dorm>> getAllHaveNullDorm();
 }

@@ -33,15 +33,4 @@ public class ReplaceServiceImpl implements ReplaceService {
         return replaceMapper.getDormIdByName(buildingIdDormName);
     }
 
-    @Override
-    public List<List<Dorm>> getAllHaveNullDorm() {
-
-        List<Building> buildings = buildingMapper.selectByMap(new HashMap<>());
-        for(Building building : buildings){
-            replaceMapper.getAllHaveNullDorm(Math.toIntExact(building.getId()));
-        }
-
-        return null;
-    }
-
 }
