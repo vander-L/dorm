@@ -25,12 +25,12 @@
     </div>
     <div class="layui-form-item">
         <label class="layui-form-label">选择缴费种类</label>
-        <div class="layui-input-block">
+        <div id ="op" class="layui-input-block">
             <input id="op1" type="radio" name="op" value="水费" title="水费">
             <input id="op2" type="radio" name="op" value="电费" title="电费" checked>
 
         </div>
-        <div class="layui-word-aux">剩余电费:</div>
+        <div id="opMsg" class="layui-form-mid layui-word-aux"></div>
     </div>
     <div class="layui-form-item">
         <label class="layui-form-label">缴费金额</label>
@@ -48,19 +48,6 @@
 
 <script>
 
-    $.ajax({
-        url: '/stuData',
-        async: false,
-        dataType: 'json',
-        type: 'get',
-        success: function (data){
-            stuName.innerHTML = data.name
-            stuId.innerHTML = data.id
-            stuCla.innerHTML = data.cla
-            stuDept.innerHTML = data.dept
-        }
-    })
-    //Demo
     layui.use('form', function(){
         var form = layui.form;
         //监听提交
@@ -73,11 +60,13 @@
     let pay = document.getElementById("pay")
     let building = document.getElementById("building");
     let number = document.getElementById("number");
+    let op = document.getElementById("op");
     let op1 = document.getElementById("op1");
     let op2 = document.getElementById("op2");
     let money = document.getElementById("money");
     let buildingMsg = document.getElementById("buildingMsg");
     let numberMsg = document.getElementById("numberMsg");
+    let opMsg = document.getElementById("opMsg");
 
     // 检测输入合法性
     building.onblur = function (){
@@ -96,7 +85,19 @@
             numberMsg.innerHTML = ""
         }
     }
+    op.onclick = function (){
+
+        if (buildingMsg.innerHTML === ""&& numberMsg.innerHTML === ""){
+            opMsg.innerHTML = "1"
+        }
+        else{
+            opMsg.innerHTML = ""
+        }
+    }
+
+
     // 检测提交
+
     pay.onsubmit = function (){
         if (building.innerHTML !== ""){
             return false
