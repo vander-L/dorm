@@ -5,6 +5,14 @@
     <title>查找修改学生信息</title>
   <link rel="stylesheet" href="../../static/layui/css/layui.css">
   <link rel="stylesheet" href="../../static/css/common.css">
+  <style>
+    .layui-form-label{
+      width: 60px;
+    }
+    .layui-form-item .layui-input-inline{
+      width: 146px;
+    }
+  </style>
 </head>
 <body>
 
@@ -16,15 +24,15 @@
       <div>
         <form class="layui-form">
           <div class="layui-form-item">
-            <label class="layui-form-label">学号</label>
+            <label class="layui-form-label">学号:</label>
             <div class="layui-input-inline">
               <input type="text" name="id" placeholder="请输入学号（选填）" class="layui-input">
             </div>
-            <label class="layui-form-label">姓名</label>
+            <label class="layui-form-label">姓名:</label>
             <div class="layui-input-inline">
               <input type="text" name="name" placeholder="请输入姓名（选填）" class="layui-input">
             </div>
-            <label class="layui-form-label">专业</label>
+            <label class="layui-form-label">专业:</label>
             <div class="layui-input-inline">
               <select name="pro" >
                 <option value="">选择专业</option>
@@ -46,7 +54,7 @@
             </div>
           </div>
           <div class="layui-form-item">
-            <label class="layui-form-label">班级</label>
+            <label class="layui-form-label">班级:</label>
             <div class="layui-input-inline">
               <select name="cla">
                 <option value="">选择班级</option>
@@ -76,7 +84,7 @@
                 <option value="2206">2206</option>
               </select>
             </div>
-            <label class="layui-form-label">性别</label>
+            <label class="layui-form-label">性别:</label>
             <div class="layui-input-inline">
               <select name="sex">
                 <option value="">请选择性别</option>
@@ -84,7 +92,7 @@
                 <option value="1">女</option>
               </select>
             </div>
-            <label class="layui-form-label">楼栋号</label>
+            <label class="layui-form-label">楼栋号:</label>
             <div class="layui-input-inline">
               <select name="building">
                 <option value="">请选择楼栋号</option>
@@ -97,15 +105,15 @@
             </div>
           </div>
           <div class="layui-form-item">
-            <label class="layui-form-label">寝室号</label>
+            <label class="layui-form-label">寝室号:</label>
             <div class="layui-input-inline">
               <input type="text" name="dorm" placeholder="输入寝室号(选填）" class="layui-input">
             </div>
-            <label class="layui-form-label">维修时间:</label>
+            <label class="layui-form-label">入学时间:</label>
             <div class="layui-input-inline">
               <input type="datetime-local" name="beginTime" class="layui-input" placeholder="请输入起始时间（选填）">
             </div>
-            <label class="layui-form-label" style="width: 36px">至</label>
+            <label class="layui-form-label" style="width: 10px;padding-left: 5px">至</label>
             <div class="layui-input-inline">
               <input type="datetime-local" name="endTime" class="layui-input" placeholder="请输入结束时间（选填）">
             </div>
@@ -133,11 +141,8 @@
             <th>学院</th>
             <th>专业</th>
             <th>电话</th>
-            <th>学号</th>
             <th>入学时间</th>
             <th>寝室编号</th>
-            <th>密码</th>
-            <th>邮箱</th>
             <th>在校状态</th>
           </tr>
           <tr th:each="dorm,dormStat : ${changedorm}">
@@ -151,9 +156,6 @@
             <td th:text="${dorm.yes}">计算机</td>
             <td th:text="${dorm.yes}">1550178962</td>
             <td th:text="${dorm.yes}"></td>
-            <td th:text="${dorm.yes}"></td>
-            <td th:text="${dorm.yes}"></td>
-            <td th:text="${dorm.yes}"></td>
           </tr>
         </table>
       </div>
@@ -164,5 +166,17 @@
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="../../static/js/adminCommon.js"></script>
+<script src="../../static/layui/layui.js"></script>
+<script>
+  layui.use('form', function(){
+    var form = layui.form;
+
+    //监听提交
+    form.on('submit(formDemo)', function(data){
+      layer.msg(JSON.stringify(data.field));
+      return false;
+    });
+  });
+</script>
 </body>
 </html>
