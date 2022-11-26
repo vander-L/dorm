@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../static/css/common.css">
+    <link rel="stylesheet" href="../../static/layui/css/layui.css">
+    <style>
+        .layui-form-label{
+            width: 120px;
+        }
+        .layui-input{
+            width: 220px;
+        }
+    </style>
+</head>
+<body>
+
+<div th:replace="admin/common::top-comm"></div>
+<div class="container">
+    <div class="body-comm">
+        <div th:replace="admin/common::left-comm"></div>
+        <div class="center-comm">
+            <div>
+                <div>
+                    <form action="" class="layui-form">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">维修编号:</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="id" class="layui-input" placeholder="请输入维修编号（选填）">
+                            </div>
+                            <label class="layui-form-label">报修人:</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="name" class="layui-input" placeholder="请输入报修人姓名（选填）">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">报修人联系方式:</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="tel" class="layui-input" placeholder="请输入报修人联系方式（选填）">
+                            </div>
+                            <label class="layui-form-label">报修宿舍:</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="dormID" class="layui-input" placeholder="请输入报修宿舍编号（选填）">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">维修类型:</label>
+                            <div class="layui-input-inline">
+                                <select name="type" >
+                                    <option value="">--全选--</option>
+                                    <option value="水电">水电</option>
+                                    <option value="维修">维修</option>
+                                    <option value="泥工">泥工</option>
+                                    <option value="直饮水">直饮水</option>
+                                </select>
+                            </div>
+                            <label class="layui-form-label">解决情况:</label>
+                            <div class="layui-input-inline">
+                                <select name="solveInfo" >
+                                    <option value="">--全选--</option>
+                                    <option value="完成">完成</option>
+                                    <option value="未完成">未完成</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">维修时间:</label>
+                            <div class="layui-input-inline">
+                                <input type="datetime-local" name="beginTime" class="layui-input" placeholder="请输入起始时间（选填）">
+
+                            </div>
+                            <label class="layui-form-label" style="width: 36px">至</label>
+                            <div class="layui-input-inline">
+                                <input type="datetime-local" name="endTime" class="layui-input" placeholder="请输入结束时间（选填）">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div>
+                    <table>
+                        <tr>
+                            <th>报修编号</th>
+                            <th>报修人</th>
+                            <th>报修人联系方式</th>
+                            <th>报修宿舍</th>
+                            <th>报修类型</th>
+                            <th>报修时间</th>
+                            <th>报修原因</th>
+                            <th>备注</th>
+                            <th>解决情况</th>
+                        </tr>
+                        <tr th:each="repair : ${repairs}">
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div th:replace="admin/common::right-comm"></div>
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="../../static/js/adminCommon.js"></script>
+
+</body>
+</html>

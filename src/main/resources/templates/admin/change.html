@@ -8,10 +8,10 @@
 </head>
 
 <body>
-<div th:replace="common::top-comm"></div>
+<div th:replace="admin/common::top-comm"></div>
 <div class="container">
   <div class="body-comm">
-    <div th:replace="common::left-comm"></div>
+    <div th:replace="admin/common::left-comm"></div>
     <div class="center-comm">
       <form id="login" class="layui-form" th:action="@{/adminChange}">
         <div class="layui-form-item">
@@ -46,12 +46,12 @@
         </div>
       </form>
     </div>
-    <div th:replace="common::right-comm"></div>
+    <div th:replace="admin/common::right-comm"></div>
   </div>
 </div>
 <script src="../../static/layui/layui.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="../../static/js/common.js"></script>
+<script src="../../static/js/adminCommon.js"></script>
 <script type="text/javascript">
   //Demo
   layui.use('form', function(){
@@ -80,8 +80,6 @@
       phoneMsg.innerHTML = ""
     }
   }
-
-  // 判断邮箱
 
   // 判断密码
   pwd.onblur = function (){
@@ -126,11 +124,6 @@
 
     if (phoneMsg.innerHTML !== ""){
       alert(phoneMsg.innerHTML)
-      return false
-    }
-
-    if (emailMsg.innerHTML !== ""){
-      alert(emailMsg.innerHTML)
       return false
     }
 
