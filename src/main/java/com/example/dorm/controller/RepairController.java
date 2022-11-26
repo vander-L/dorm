@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.Date;
 
 @Controller
 public class RepairController {
@@ -15,7 +16,7 @@ public class RepairController {
     RepairService repairService;
 
     @RequestMapping(value = "/toRepair")
-    public String repair(String name, String num, String dorm1, String dorm2, String type, String reason, String note, String time, HttpServletRequest req){
+    public String repair(String name, String num, String dorm1, String dorm2, String type, String reason, String note, Date time, HttpServletRequest req){
         System.out.println(dorm1);
         Repair repair = new Repair();
         BuildingIdDormName buildingIdDormName = new BuildingIdDormName();
