@@ -102,11 +102,25 @@
         </div>
       </div>
       <div class="layui-form-item">
-        <label class="layui-form-label">宿舍</label>
+        <label class="layui-form-label">楼栋号</label>
         <div class="layui-input-block">
-          <input type="text" name="dorm" placeholder="xx（楼栋）-xxx（寝室号）" autocomplete="off" class="layui-input">
+          <select name="city">
+            <option value="">请选择楼栋号</option>
+            <option value="1">1栋</option>
+            <option value="2">2栋</option>
+            <option value="3">3栋</option>
+            <option value="4">4栋</option>
+            <option value="5">5栋</option>
+          </select>
         </div>
       </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">寝室号</label>
+        <div class="layui-input-block">
+          <input type="text" name="dorm" placeholder="输入寝室号" autocomplete="off" class="layui-input">
+        </div>
+      </div>
+
     </div>
     <div class="zzz">
   <div class="layui-form-item qq">
@@ -146,9 +160,9 @@
       <td th:text="${dorm.AFTER_DORM_NAME}">状态变量：index</td>
       <td th:text="${dorm.BEFORE_BUILDING_NAME}">状态变量：count</td>
       <td th:text="${dorm.AFTER_BUIDING_NAME}">状态变量：size</td>
-      <td th:text="${dorm.yes}"></td>
-      <td th:text="${dorm.yes}"></td>
-      <td th:text="${dorm.yes}"></td>
+      <td th:text="${dorm.yes}">15999104602</td>
+      <td th:text="${dorm.yes}">计算机</td>
+      <td th:text="${dorm.yes}">1550178962         </td>
       <td th:text="${dorm.yes}"></td>
       <td th:text="${dorm.yes}"></td>
       <td th:text="${dorm.yes}"></td>
