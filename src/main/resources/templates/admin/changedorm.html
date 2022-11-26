@@ -7,53 +7,57 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="../../static/layui/css/layui.css">
+    <link rel="stylesheet" href="../../static/css/common.css">
 
     <style>
         table{
             width: 100%;
             margin: 0 auto;
         }
-        div{
-            width: 48%;
-        }
     </style>
 </head>
 <body>
-<div>
-        <table class="layui-table">
-            <tr>
-                <th>换寝编号</th>
-                <th>学号</th>
-                <th>姓名</th>
-                <th>换前寝室</th>
-                <th>换后寝室</th>
-                <th>换前楼栋</th>
-                <th>换后楼栋</th>
-                <th>申请</th>
-            </tr>
-            <tr  th:each="dorm,dormStat : ${changeDorm}">
-                <td th:text="${dorm.getId()}"></td>
-                <td th:text="${dorm.getStudentId()}">Onions</td>
-                <td th:text="${dorm.getStudentName()}">test@test.com.cn</td>
-                <td th:text="${dorm.getBeforeDormName()}">yes</td>
-                <td th:text="${dorm.getAfterDormName()}">状态变量：index</td>
-                <td th:text="${dorm.getBeforeBuildingName()}">状态变量：count</td>
-                <td th:text="${dorm.getAfterBuildingName()}">状态变量：size</td>
-                <td>
-                    <span th:text="${dorm.getYes()}" th:if="${dorm.getYes()}!=null"></span>
-                    <form th:if="${dorm.getYes()}==null" id="from1">
-                        <input type="text" name="dormId" th:value="${dorm.getId()}" style="display: none">
-                        <input type="submit" name="agree" value="同意">
-                        <input type="submit" name="agree" value="拒绝">
-                    </form>
-                </td>
-            </tr>
-        </table>
-            <div class="layui-form-item">
-                <div class="layui-input-block">
-                    <button class="layui-btn" id="form2" lay-submit lay-filter="formDemo">立即提交</button>
-                </div>
+<div th:replace="admin/common::top-comm"></div>
+<div class="container">
+    <div class="body-comm">
+        <div th:replace="admin/common::left-comm"></div>
+        <div class="center-comm">
+            <div>
+                <table class="layui-table">
+                    <tr>
+                        <th>换寝编号</th>
+                        <th>学号</th>
+                        <th>姓名</th>
+                        <th>换前寝室</th>
+                        <th>换后寝室</th>
+                        <th>换前楼栋</th>
+                        <th>换后楼栋</th>
+                        <th>申请</th>
+                    </tr>
+                    <tr  th:each="dorm,dormStat : ${changeDorm}">
+                        <td th:text="${dorm.getId()}"></td>
+                        <td th:text="${dorm.getStudentId()}">Onions</td>
+                        <td th:text="${dorm.getStudentName()}">test@test.com.cn</td>
+                        <td th:text="${dorm.getBeforeDormName()}">yes</td>
+                        <td th:text="${dorm.getAfterDormName()}">状态变量：index</td>
+                        <td th:text="${dorm.getBeforeBuildingName()}">状态变量：count</td>
+                        <td th:text="${dorm.getAfterBuildingName()}">状态变量：size</td>
+                        <td>
+                            <span th:text="${dorm.getYes()}" th:if="${dorm.getYes()}!=null"></span>
+                            <form th:if="${dorm.getYes()}==null" id="from1">
+                                <input type="text" name="dormId" th:value="${dorm.getId()}" style="display: none">
+                                <input type="submit" name="agree" value="同意">
+                                <input type="submit" name="agree" value="拒绝">
+                            </form>
+                        </td>
+                    </tr>
+                </table>
             </div>
+        </div>
+        <div th:replace="admin/common::right-comm"></div>
+    </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="../../static/js/adminCommon.js"></script>
 </body>
 </html>
