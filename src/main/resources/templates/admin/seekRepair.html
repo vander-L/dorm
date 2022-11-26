@@ -77,10 +77,16 @@
                                 <input type="datetime-local" name="endTime" class="layui-input" placeholder="请输入结束时间（选填）">
                             </div>
                         </div>
+                        <div class="layui-form-item" style="display: flex; justify-content: center; align-items: center">
+                            <div class="layui-input-inline">
+                                <button class="layui-btn" >立即提交</button>
+                                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                            </div>
+                        </div>
                     </form>
                 </div>
                 <div>
-                    <table>
+                    <table class="layui-table">
                         <tr>
                             <th>报修编号</th>
                             <th>报修人</th>
@@ -93,14 +99,15 @@
                             <th>解决情况</th>
                         </tr>
                         <tr th:each="repair : ${repairs}">
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
+                            <th th:text="${repair.a}"></th>
+                            <th th:text="${repair.a}"></th>
+                            <th th:text="${repair.a}"></th>
+                            <th th:text="${repair.a}"></th>
+                            <th th:text="${repair.a}"></th>
+                            <th th:text="${repair.a}"></th>
+                            <th th:text="${repair.a}"></th>
+                            <th th:text="${repair.a}"></th>
+                            <th th:text="${repair.a}"></th>
                         </tr>
                     </table>
                 </div>
@@ -113,6 +120,8 @@
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="../../static/js/adminCommon.js"></script>
+<script>
 
+</script>
 </body>
 </html>
