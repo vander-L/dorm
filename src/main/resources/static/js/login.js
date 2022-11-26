@@ -4,6 +4,7 @@ layui.use(['form', 'layer', 'jquery'], function () {
     $ = layui.jquery;
 
 
+
     //表单输入效果
     $(".loginBody .input-item").click(function (e) {
         e.stopPropagation();
@@ -20,6 +21,10 @@ layui.use(['form', 'layer', 'jquery'], function () {
             $(this).parent().removeClass("layui-input-active");
         }
     })
+
+    //判断登录方式
+    
+
 })
 
 
