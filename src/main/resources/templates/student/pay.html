@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -11,17 +11,17 @@
     <div class="body-comm">
         <div th:replace="student/common::left-comm"></div>
         <div class="center-comm">
-            <form class="layui-form" th:action="@{/templates/login.html}" method="post">
+            <form class="layui-form" th:action="@{/toPay}">
                 <div class="layui-form-item">
-                    <label class="layui-form-label">寝室号</label>
+                    <label class="layui-form-label">楼栋号</label>
                     <div class="layui-input-block">
-                        <select>
+                        <select name="buildingName">
                             <option value="">请选择楼栋号</option>
-                            <option value="1">1栋</option>
-                            <option value="2">2栋</option>
-                            <option value="3">3栋</option>
-                            <option value="4">4栋</option>
-                            <option value="5">5栋</option>
+                            <option value="1栋">1栋</option>
+                            <option value="2栋">2栋</option>
+                            <option value="3栋">3栋</option>
+                            <option value="4栋">4栋</option>
+                            <option value="5栋">5栋</option>
                         </select>
                     </div>
                     <div class="layui-form-mid layui-word-aux"></div>
@@ -29,13 +29,13 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">寝室号</label>
                     <div class="layui-input-block">
-                       <select>
+                       <select name="dormName">
                            <option value="">请选择寝室号</option>
-                           <option value="1">1</option>
-                           <option value="2">2</option>
-                           <option value="3">3</option>
-                           <option value="4">4</option>
-                           <option value="5">5</option>
+                           <option value="101">101</option>
+                           <option value="102">102</option>
+                           <option value="103">103</option>
+                           <option value="104">104</option>
+                           <option value="311">311</option>
                        </select>
                     </div>
                     <div class="layui-form-mid layui-word-aux"></div>
@@ -43,10 +43,13 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">选择缴费种类</label>
                     <div class="layui-input-block">
-                        <input type="radio" value="水费" title="水费">
-                        <input type="radio" value="电费" title="电费" checked>
+                        <input type="radio" value="水费" title="水费" name="type">
+                        <input type="radio" value="电费" title="电费" name="type" checked>
                     </div>
-                    <p th:text="${msg}" style="text-align: center">剩余电费：</p>
+                    <div th:if="${Dorm}!=null">
+                        <span th:text="${Dorm.getWater()}" style="text-align: center">剩余水费：</span>
+                        <span th:text="${Dorm.getElectricity()}" style="text-align: center">剩余电费：</span>
+                    </div>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label">缴费金额</label>

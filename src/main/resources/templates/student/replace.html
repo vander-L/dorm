@@ -18,7 +18,7 @@
   <div class="body-comm">
     <div th:replace="student/common::left-comm"></div>
     <div class="center-comm">
-      <form class="layui-form" th:action="@{/toReplace}" th:method="post">
+      <form class="layui-form" th:action="@{/toReplace}">
         <div class="layui-form-item">
           <label class="layui-form-label">姓名</label>
           <div class="layui-input-inline">
@@ -75,7 +75,7 @@
         </div>
         <div class="layui-form-item">
           <div class="layui-input-block">
-            <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+            <input type="submit" class="layui-btn" value="立即提交">
             <button type="reset" class="layui-btn layui-btn-primary">重置</button>
           </div>
         </div>
@@ -88,17 +88,5 @@
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="../../static/layui/layui.js"></script>
 <script src="../../static/js/common.js"></script>
-<script>
-  //Demo
-  layui.use('form', function(){
-    var form = layui.form;
-
-    //监听提交
-    form.on('submit(formDemo)', function(data){
-      layer.msg(JSON.stringify(data.field));
-      return false;
-    });
-  });
-</script>
 </body>
 </html>

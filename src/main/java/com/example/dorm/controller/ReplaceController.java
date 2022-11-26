@@ -6,6 +6,7 @@ import com.example.dorm.entity.Replace;
 import com.example.dorm.service.ReplaceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 public class ReplaceController{
@@ -14,8 +15,9 @@ public class ReplaceController{
 
 
 
-    @RequestMapping(value = "/toReplace")
+    @RequestMapping( "/toReplace")
     public String replace(String name, String no, String city, String dorm1, String city1, String dorm2){
+        System.out.println("1111");
         Replace replace = new Replace();
         BuildingIdDormName beforeBuildingIdDormName = new BuildingIdDormName();
         BuildingIdDormName afterBuildingIdDormName = new BuildingIdDormName();

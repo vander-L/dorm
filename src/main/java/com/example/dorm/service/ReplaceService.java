@@ -8,15 +8,15 @@ import com.example.dorm.entity.Replace;
 import java.util.List;
 
 public interface ReplaceService {
-    public void insertReplace(Replace replace);
+    void insertReplace(Replace replace);
 
-    public Integer getBuildingIdByName(String name);
+    Integer getBuildingIdByName(String name);
 
-    public Integer getDormIdByName(BuildingIdDormName buildingIdDormName);
+    Integer getDormIdByName(BuildingIdDormName buildingIdDormName);
 
-    public List<Replace> getChangeDormAll();
+    List<Replace> getChangeDormAll();
 
-    public Replace selectById(long id);
+    Replace selectById(long id);
 
-    public void updateById(Replace replace);
+    void updateById(Replace replace);
 }
