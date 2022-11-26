@@ -33,4 +33,7 @@ public class ReplaceServiceImpl implements ReplaceService {
         return replaceMapper.getDormIdByName(buildingIdDormName);
     }
 
+    public List<Replace> getChangeDormAll(){
+        return replaceMapper.selectAll();
+    }
 }

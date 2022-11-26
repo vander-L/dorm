@@ -18,4 +18,8 @@
         from A_DORM
         where BUILDING_ID = #{buildingId} AND NUM_LEFT != 0;
     </select>
+    <select id="selectAll" resultType="Replace">
+        select *
+        from A_REPLACE
+    </select>
 </mapper>

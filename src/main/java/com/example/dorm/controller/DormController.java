@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class DormController{
     @ResponseBody
-    @RequestMapping("/pay")
+    @RequestMapping("/dormData")
     public String SetRet() throws JSONException {
 
         //设定数据库驱动，数据库连接地址、端口、名称，用户名，密码  
@@ -80,6 +80,7 @@ public class DormController{
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
+
             try {
                 if (rs != null) {
                     rs.close();
@@ -95,8 +96,5 @@ public class DormController{
             }
         }
         return jsonStr;
-    }
-    public static void main(String[] args) throws JSONException{
-        new DormController().SetRet();
     }
 }
