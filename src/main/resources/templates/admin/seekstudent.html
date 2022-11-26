@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>查找修改学生信息</title>
   <link rel="stylesheet" href="//unpkg.com/layui@2.6.8/dist/css/layui.css">
+  <link rel="stylesheet" href="../../static/css/common.css">
   <script src="//unpkg.com/layui@2.6.8/dist/layui.js"></script>
   <style>
     .aa{
@@ -17,10 +18,38 @@
     .qq{
       margin: 0 auto;
     }
+    .ww{
+      display: flex;
+    }
+
+    a{
+      color: white;
+    }
 
   </style>
 </head>
 <body>
+<div class="top">
+  <div class="top-comm" th:fragment="top-comm">
+    <div class="nav">
+      <div class="nav-left" style="width: 50%">
+        <div class="ww" style="font-size: 17px;line-height: 60px;">
+          <div><a th:href="@{/admin/index}">系统介绍</a></div>
+          <div><a th:href="@{/admin/change}">修改个人信息</a></div>
+          <div><a th:href="@{/admin/seek}">查询学生信息</a></div>
+          <div><a th:href="@{/admin/changedorm}">换寝管理</a></div>
+          <div><a th:href="@{/pay}">报修查询</a></div>
+        </div>
+      </div>
+      <div style="display: none">
+        <form id="logout-form" th:action="@{/logout}" method="post"></form>
+      </div>
+      <div class="nav-right" style="width: 50%">
+        <div><a id="logout-a" href="javascript:logout()"><i class="icon layui-icon layui-icon-logout"></i><span>退出登录</span></a></div>
+      </div>
+    </div>
+  </div>
+</div>
 <div>
 <form class="layui-form zz" th:action="">
   <div class="layui-form-item">
@@ -148,7 +177,7 @@
       <th>电话</th>
       <th>学号</th>
       <th>入学时间</th>
-      <th>寝室</th>
+      <th>寝室编号</th>
       <th>密码</th>
       <th>邮箱</th>
       <th>在校状态</th>
