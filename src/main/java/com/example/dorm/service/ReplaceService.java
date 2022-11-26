@@ -15,4 +15,8 @@ public interface ReplaceService {
     public Integer getDormIdByName(BuildingIdDormName buildingIdDormName);
 
     public List<Replace> getChangeDormAll();
+
+    public Replace selectById(long id);
+
+    public void updateById(Replace replace);
 }
