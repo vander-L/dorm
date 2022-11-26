@@ -80,7 +80,6 @@ public class DormController{
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-
             try {
                 if (rs != null) {
                     rs.close();
