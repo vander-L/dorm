@@ -22,14 +22,18 @@
       display: flex;
     }
 
+    a{
+      color: white;
+    }
+
   </style>
 </head>
 <body>
 <div class="top">
   <div class="top-comm" th:fragment="top-comm">
     <div class="nav">
-      <div class="nav-left">
-        <div class="ww" style="font-size: 13px;line-height: 60px;">
+      <div class="nav-left" style="width: 50%">
+        <div class="ww" style="font-size: 17px;line-height: 60px;">
           <div><a th:href="@{/admin/index}">系统介绍</a></div>
           <div><a th:href="@{/admin/change}">修改个人信息</a></div>
           <div><a th:href="@{/admin/seek}">查询学生信息</a></div>
@@ -40,7 +44,7 @@
       <div style="display: none">
         <form id="logout-form" th:action="@{/logout}" method="post"></form>
       </div>
-      <div class="nav-right">
+      <div class="nav-right" style="width: 50%">
         <div><a id="logout-a" href="javascript:logout()"><i class="icon layui-icon layui-icon-logout"></i><span>退出登录</span></a></div>
       </div>
     </div>
@@ -173,7 +177,7 @@
       <th>电话</th>
       <th>学号</th>
       <th>入学时间</th>
-      <th>寝室</th>
+      <th>寝室编号</th>
       <th>密码</th>
       <th>邮箱</th>
       <th>在校状态</th>
