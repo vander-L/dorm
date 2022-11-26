@@ -38,9 +38,9 @@ public class Replace {
 
     private Integer afterBuildingId;
 
-    private Integer yes;
+    private String yes;
 
-    public Replace(Integer studentId, String studentName, Integer beforeDormId, String beforeDormName, Integer afterDormId, String afterDormName, String afterBuildingName, String beforeBuildingName, Integer beforeBuildingId, Integer afterBuildingId ,Integer yes) {
+    public Replace(Integer studentId, String studentName, Integer beforeDormId, String beforeDormName, Integer afterDormId, String afterDormName, String afterBuildingName, String beforeBuildingName, Integer beforeBuildingId, Integer afterBuildingId ,String yes) {
         this.studentId = studentId;
         this.studentName = studentName;
         this.beforeDormId = beforeDormId;
@@ -51,6 +51,6 @@ public class Replace {
         this.beforeBuildingName = beforeBuildingName;
         this.beforeBuildingId = beforeBuildingId;
         this.afterBuildingId = afterBuildingId;
-        this.yes=yes;
+        this.yes = yes;
     }
 }

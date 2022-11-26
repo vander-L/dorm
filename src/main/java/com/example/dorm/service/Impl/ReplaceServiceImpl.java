@@ -36,4 +36,12 @@ public class ReplaceServiceImpl implements ReplaceService {
     public List<Replace> getChangeDormAll(){
         return replaceMapper.selectAll();
     }
+
+    public Replace selectById(long id){
+        return replaceMapper.selectById(id);
+    }
+
+    public  void updateById(Replace replace){
+        replaceMapper.updateById(replace);
+    }
 }

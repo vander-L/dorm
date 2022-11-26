@@ -22,6 +22,7 @@
 <div>
         <table class="layui-table">
             <tr>
+                <th>换寝编号</th>
                 <th>学号</th>
                 <th>姓名</th>
                 <th>换前寝室</th>
@@ -31,7 +32,8 @@
                 <th>申请</th>
             </tr>
             <tr  th:each="dorm,dormStat : ${changeDorm}">
-                <td th:text="${dorm.getId()}">Onions</td>
+                <td th:text="${dorm.getId()}"></td>
+                <td th:text="${dorm.getStudentId()}">Onions</td>
                 <td th:text="${dorm.getStudentName()}">test@test.com.cn</td>
                 <td th:text="${dorm.getBeforeDormName()}">yes</td>
                 <td th:text="${dorm.getAfterDormName()}">状态变量：index</td>
@@ -39,16 +41,17 @@
                 <td th:text="${dorm.getAfterBuildingName()}">状态变量：size</td>
                 <td>
                     <span th:text="${dorm.getYes()}" th:if="${dorm.getYes()}!=null"></span>
-                    <form th:if="${dorm.getYes()}==null">
-                        <input type="radio" name="agree" value="同意">同意
-                        <input type="radio" name="agree" value="拒绝"  checked>拒绝
+                    <form th:if="${dorm.getYes()}==null" id="from1">
+                        <input type="text" name="dormId" th:value="${dorm.getId()}" style="display: none">
+                        <input type="submit" name="agree" value="同意">
+                        <input type="submit" name="agree" value="拒绝">
                     </form>
                 </td>
             </tr>
         </table>
             <div class="layui-form-item">
                 <div class="layui-input-block">
-                    <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                    <button class="layui-btn" id="form2" lay-submit lay-filter="formDemo">立即提交</button>
                 </div>
             </div>
 </div>
