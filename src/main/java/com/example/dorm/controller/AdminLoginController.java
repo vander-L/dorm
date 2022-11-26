@@ -44,7 +44,7 @@ public class AdminLoginController {
         return JSON.toJSONString(adminService.SelectById((Long)req.getSession().getAttribute("id")));
     }
 
-    @PostMapping("/logout")
+    @PostMapping("/adminLogout")
     public String logout(HttpServletRequest req){
         req.getSession().invalidate();
         return "adminlogin";

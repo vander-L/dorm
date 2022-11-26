@@ -12,8 +12,11 @@
     <div class="nav-left">
       <div>学生宿舍管理系统</div>
     </div>
+    <div style="display: none">
+      <form id="logout-form" th:action="@{/logout}" method="post"></form>
+    </div>
     <div class="nav-right">
-      <div><a href="#"><i class="icon layui-icon layui-icon-logout"></i></a><span>退出登录</span></div>
+      <div><a id="logout-a" href="javascript:logout()"><i class="icon layui-icon layui-icon-logout"></i><span>退出登录</span></a></div>
     </div>
   </div>
 </div>
@@ -21,23 +24,24 @@
   <div class="body-comm">
     <div class="left-comm" th:fragment="left-comm">
       <div class="left-top">
-        <div>管理员功能</div>
+        <div>管理员端功能</div>
         <hr>
       </div>
       <div class="left-bottom">
-        <div><a th:href="@{/index}">系统介绍</a></div>
-        <div><a th:href="@{/change}">查找/修改学生信息</a></div>
-        <div><a href="">换寝管理</a></div>
-        <div><a href="">报修查询</a></div>
-        <div><a href="">更改个人信息</a></div>
+        <div><a th:href="@{/admin/index}">系统介绍</a></div>
+        <div><a th:href="@{/admin/change}">修改个人信息</a></div>
+        <div><a th:href="@{/admin/seek}">查询学生信息</a></div>
+        <div><a th:href="@{/admin/changedorm}">换寝管理</a></div>
+        <div><a th:href="@{/pay}">报修查询</a></div>
       </div>
     </div>
     <div class="center-comm">
     </div>
-    <div class="right-comm" th:fragment="right-comm(stu)">
+    <div class="right-comm" th:fragment="right-comm">
       <div><img src="../../static/img/logo.png" alt=""></div>
-      <div><span>姓名:</span><span th:text="${stu.getName()}"></span></div>
-      <div><span>电话:</span><span th:text="${stu.getId()}"></span></div>
+      <div><span>姓名: </span><span id="adminName"></span></div>
+      <div><span>编号: </span><span id="adminId"></span></div>
+      <div><span>电话: </span><span id="adminTel"></span></div>
     </div>
   </div>
 </div>
