@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-  <link rel="stylesheet" href="//unpkg.com/layui@2.6.8/dist/css/layui.css">
-  <script src="//unpkg.com/layui@2.6.8/dist/layui.js"></script>
+    <link rel="stylesheet" href="../../static/layui/css/layui.css">
+    <link rel="stylesheet" href="../../static/css/common.css">
   <style>
     .zzz{
       width: 30%;
@@ -12,69 +12,85 @@
   </style>
 </head>
 <body>
-<form class="layui-form" th:action="@{/toReplace}" th:method="post">
-  <div class="layui-form-item">
-    <label class="layui-form-label">姓名</label>
-    <div class="layui-input-inline">
-      <input type="text" name="name" required lay-verify="required" placeholder="请输入姓名" autocomplete="off" class="layui-input">
-    </div>
-    <div class="layui-form-mid layui-word-aux"></div>
-  </div>
-  <div class="layui-form-item">
-    <label class="layui-form-label">学号</label>
-    <div class="layui-input-inline">
-      <input type="text" name="no" required lay-verify="required" placeholder="请输入学号" autocomplete="off" class="layui-input">
-    </div>
-    <div class="layui-form-mid layui-word-aux"></div>
-  </div>
-  <div class="layui-form-item">
-    <label class="layui-form-label">现寝室栋号</label>
-    <div class="layui-input-block zzz">
-      <select name="city" lay-verify="required">
-        <option value=""></option>
-        <option value="0">1栋</option>
-        <option value="1">2栋</option>
-        <option value="2">3栋</option>
-        <option value="3">4栋</option>
-        <option value="4">5栋</option>
-      </select>
-    </div>
-  </div>
-  <div class="layui-form-item">
-    <label class="layui-form-label">现寝室号</label>
-    <div class="layui-input-inline">
-      <input type="text" name="dorm1" required lay-verify="required" placeholder="请输入寝室号" autocomplete="off" class="layui-input">
-    </div>
-    <div class="layui-form-mid layui-word-aux"></div>
-  </div>
-  <div class="layui-form-item">
-    <label class="layui-form-label">换寝室栋号</label>
-    <div class="layui-input-block zzz">
-      <select name="city1" lay-verify="required">
-        <option value=""></option>
-        <option value="0">1栋</option>
-        <option value="1">2栋</option>
-        <option value="2">3栋</option>
-        <option value="3">4栋</option>
-        <option value="4">5栋</option>
-      </select>
-    </div>
-  </div>
-  <div class="layui-form-item">
-    <label class="layui-form-label">更换寝室号</label>
-    <div class="layui-input-inline">
-      <input type="text" name="dorm2" required lay-verify="required" placeholder="请输入寝室号" autocomplete="off" class="layui-input">
-    </div>
-    <div class="layui-form-mid layui-word-aux"></div>
-  </div>
-  <div class="layui-form-item">
-    <div class="layui-input-block">
-      <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
-      <button type="reset" class="layui-btn layui-btn-primary">重置</button>
-    </div>
-  </div>
-</form>
 
+<div th:replace="student/common::top-comm"></div>
+<div class="container">
+  <div class="body-comm">
+    <div th:replace="student/common::left-comm"></div>
+    <div class="center-comm">
+      <form class="layui-form" th:action="@{/toReplace}" th:method="post">
+        <div class="layui-form-item">
+          <label class="layui-form-label">姓名</label>
+          <div class="layui-input-inline">
+            <input type="text" name="name" required lay-verify="required" placeholder="请输入姓名" autocomplete="off" class="layui-input">
+          </div>
+          <div class="layui-form-mid layui-word-aux"></div>
+        </div>
+        <div class="layui-form-item">
+          <label class="layui-form-label">学号</label>
+          <div class="layui-input-inline">
+            <input type="text" name="no" required lay-verify="required" placeholder="请输入学号" autocomplete="off" class="layui-input">
+          </div>
+          <div class="layui-form-mid layui-word-aux"></div>
+        </div>
+        <div class="layui-form-item">
+          <label class="layui-form-label">现寝室栋号</label>
+          <div class="layui-input-block zzz">
+            <select name="city" lay-verify="required">
+              <option value=""></option>
+              <option value="0">1栋</option>
+              <option value="1">2栋</option>
+              <option value="2">3栋</option>
+              <option value="3">4栋</option>
+              <option value="4">5栋</option>
+            </select>
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <label class="layui-form-label">现寝室号</label>
+          <div class="layui-input-inline">
+            <input type="text" name="dorm1" required lay-verify="required" placeholder="请输入寝室号" autocomplete="off" class="layui-input">
+          </div>
+          <div class="layui-form-mid layui-word-aux"></div>
+        </div>
+        <div class="layui-form-item">
+          <label class="layui-form-label">换寝室栋号</label>
+          <div class="layui-input-block zzz">
+            <select name="city1" lay-verify="required">
+              <option value=""></option>
+              <option value="0">1栋</option>
+              <option value="1">2栋</option>
+              <option value="2">3栋</option>
+              <option value="3">4栋</option>
+              <option value="4">5栋</option>
+            </select>
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <label class="layui-form-label">更换寝室号</label>
+          <div class="layui-input-inline">
+            <input type="text" name="dorm2" required lay-verify="required" placeholder="请输入寝室号" autocomplete="off" class="layui-input">
+          </div>
+          <div class="layui-form-mid layui-word-aux"></div>
+        </div>
+        <div class="layui-form-item">
+          <div class="layui-input-block">
+            <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div th:replace="student/common::right-comm"></div>
+  </div>
+</div>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="../../static/layui/layui.js"></script>
+<script src="../../static/js/common.js"></script>
 <script>
   //Demo
   layui.use('form', function(){
