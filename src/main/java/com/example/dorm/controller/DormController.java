@@ -32,7 +32,6 @@ public class DormController{
 
         //数据库连接对象  
         Connection conn = null;
-
         String jsonStr = null;
         try {
             //反射Oracle数据库驱动程序类  

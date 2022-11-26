@@ -6,39 +6,52 @@
     <link rel="stylesheet" href="../../static/layui/css/layui.css">
     <link rel="stylesheet" href="../../static/css/common.css">
 </head>
-<body class="paybody">
-<div th:replace="student/common::top-comm"></div>
+<body >
 <div class="container">
     <div class="body-comm">
         <div th:replace="student/common::left-comm"></div>
         <div class="center-comm">
-            <form id="pay" class="layui-form" th:action="@{/templates/login.html}" method="post">
+            <form class="layui-form" th:action="@{/templates/login.html}" method="post">
                 <div class="layui-form-item">
-                    <label class="layui-form-label">楼栋号</label>
-                    <div class="layui-input-inline">
-                        <input id="building" type="text" name="building" required  lay-verify="required" placeholder="请输入楼栋号" autocomplete="off" class="layui-input">
+                    <label class="layui-form-label">寝室号</label>
+                    <div class="layui-input-block">
+                        <select>
+                            <option value="">请选择楼栋号</option>
+                            <option value="1">1栋</option>
+                            <option value="2">2栋</option>
+                            <option value="3">3栋</option>
+                            <option value="4">4栋</option>
+                            <option value="5">5栋</option>
+                        </select>
                     </div>
-                    <div id="buildingMsg" class="layui-form-mid layui-word-aux"></div>
+                    <div class="layui-form-mid layui-word-aux"></div>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label">寝室号</label>
-                    <div class="layui-input-inline">
-                        <input id="number" type="text" name="number" required lay-verify="required" placeholder="请输入寝室号" autocomplete="off" class="layui-input">
+                    <div class="layui-input-block">
+                       <select>
+                           <option value="">请选择寝室号</option>
+                           <option value="1">1</option>
+                           <option value="2">2</option>
+                           <option value="3">3</option>
+                           <option value="4">4</option>
+                           <option value="5">5</option>
+                       </select>
                     </div>
-                    <div id="numberMsg" class="layui-form-mid layui-word-aux"></div>
+                    <div class="layui-form-mid layui-word-aux"></div>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label">选择缴费种类</label>
-                    <div id ="op" class="layui-input-block">
-                        <input id="op1" type="radio" name="op" value="水费" title="水费">
-                        <input id="op2" type="radio" name="op" value="电费" title="电费" checked>
+                    <div class="layui-input-block">
+                        <input type="radio" value="水费" title="水费">
+                        <input type="radio" value="电费" title="电费" checked>
                     </div>
-                    <div id="opMsg" class="layui-form-mid layui-word-aux"></div>
+                    <p th:text="${msg}" style="text-align: center">剩余电费：</p>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label">缴费金额</label>
                     <div class="layui-input-inline">
-                        <input id="money" type="text" name="money" required lay-verify="required" placeholder="请输入缴费金额" autocomplete="off" class="layui-input">
+                        <input type="text" name="money" required lay-verify="required" placeholder="请输入缴费金额" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-form-item">
@@ -49,82 +62,12 @@
                 </div>
             </form>
         </div>
-        <div th:replace="student/common::right-comm"></div>
+
     </div>
 </div>
 
-
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="../../static/layui/layui.js"></script>
-<script src="../../static/js/common.js"></script>
-<script>
-
-    layui.use('form', function(){
-        var form = layui.form;
-        //监听提交
-        form.on('submit(formDemo)', function(data){
-            layer.msg(JSON.stringify(data.field));
-            //return false;
-        });
-    });
-
-    let pay = document.getElementById("pay")
-    let building = document.getElementById("building");
-    let number = document.getElementById("number");
-    let op = document.getElementById("op");
-    let op1 = document.getElementById("op1");
-    let op2 = document.getElementById("op2");
-    let money = document.getElementById("money");
-    let buildingMsg = document.getElementById("buildingMsg");
-    let numberMsg = document.getElementById("numberMsg");
-    let opMsg = document.getElementById("opMsg");
-
-    // 检测输入合法性
-    building.onblur = function (){
-        let buildingReg = /[1-9]\d{1}/g;
-        if (building.value !== "" && !buildingReg.test(building.value)){
-            buildingMsg.innerHTML = "楼栋号格式错误"
-        }else{
-            buildingMsg.innerHTML = ""
-        }
-    }
-    number.onblur = function (){
-        let numberReg = /[1-9]\d{1}/g;
-        if (number.value !== "" && !numberReg.test(number.value)){
-            numberMsg.innerHTML = "寝室号格式错误"
-        }else{
-            numberMsg.innerHTML = ""
-        }
-    }
-    op.onclick = function (){
-
-        if (buildingMsg.innerHTML === ""&& numberMsg.innerHTML === ""){
-            opMsg.innerHTML = "1"
-        }
-        else{
-            opMsg.innerHTML = ""
-        }
-    }
-
-
-    // 检测提交
-
-    pay.onsubmit = function (){
-        if (building.innerHTML !== ""){
-            return false
-        }
-
-        if (number.innerHTML !== ""){
-            return false
-        }
-
-        if (money.innerHTML !== ""){
-            return false
-        }
-        alert("支付成功")
-    }
-
-</script>
 
 </body>
 </html>
