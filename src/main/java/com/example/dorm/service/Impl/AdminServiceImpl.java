@@ -15,4 +15,9 @@ public class AdminServiceImpl implements AdminService {
     public Admin SelectById(long id){
         return adminMapper.selectById(id);
     }
+
+
+    public void UpdateById(Admin admin){
+        adminMapper.updateById(admin);
+    }
 }

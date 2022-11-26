@@ -36,7 +36,7 @@ public class ChangeController {
         if(!pwd.isEmpty()) {
             student.setPassword(pwd);
         }
-        System.out.println(student);
+//        System.out.println(student);
         studentService.UpdateById(student);
         return "redirect:index";
     }
