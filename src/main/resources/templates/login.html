@@ -27,11 +27,9 @@
                    lay-verify="required">
         </div>
         <div class="layui-form-item">
-            <p th:text="${msg}"></p>
+            <p th:text="${msg}" style="text-align: center"></p>
             <button class="layui-btn" style="margin-left: 100px" >登录</button>
-        </div>
-        <div class="layui-form-item">
-            <a th:href="@{/admin}" style="margin-left: 190px">管理员登录</a>
+            <a th:href="@{/admin}" style="margin-left: 190px; color: #2d93ca;margin-top: 1px">管理员登录</a>
         </div>
     </div>
 </form>

@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class DormController{
     @ResponseBody
-    @RequestMapping()
+    @RequestMapping("/pay")
     public String SetRet() throws JSONException {
 
         //设定数据库驱动，数据库连接地址、端口、名称，用户名，密码  
