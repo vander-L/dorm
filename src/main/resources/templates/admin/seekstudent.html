@@ -10,7 +10,6 @@
       display: flex;
     }
     select{
-      width: 20%;
     }
     .zzz{
       display: flex;
@@ -23,82 +22,79 @@
 </head>
 <body>
 <div>
-  <div class="cx">
-    <span>输入查询</span>
-  </div>
 <form class="layui-form zz" th:action="">
   <div class="layui-form-item">
     <div class=" aa">
       <div class="layui-form-item">
-      <label class="layui-form-label">学号</label>
+      <label class="layui-form-label">姓名</label>
         <div class="layui-input-block">
-          <input type="text" name="title" required  lay-verify="required" placeholder="查询姓名" autocomplete="off" class="layui-input">
+          <input type="text" name="title" placeholder="查询姓名" autocomplete="off" class="layui-input">
         </div>
         </div>
       <div class="layui-form-item">
         <label class="layui-form-label">学号</label>
         <div class="layui-input-block">
-          <input type="text" name="title" required  lay-verify="required" placeholder="查询学号" autocomplete="off" class="layui-input">
+          <input type="text" name="title"  placeholder="查询学号" autocomplete="off" class="layui-input">
         </div>
       </div>
       <div class="layui-form-item">
         <label class="layui-form-label">专业</label>
         <div class="layui-input-block">
-          <select name="city" lay-verify="required">
+          <select name="city" >
             <option value="">选择专业</option>
-            <option value="0">包装设计</option>
-            <option value="1">汉语言文学</option>
-            <option value="2">生态环境</option>
-            <option value="3">计算机科学与技术</option>
-            <option value="4">历史学</option>
-            <option value="4">应用化学</option>
-            <option value="4">通信工程</option>
-            <option value="4">信息工程</option>
-            <option value="4">测绘工程</option>
-            <option value="4">动物医学</option>
-            <option value="4">桥梁技术</option>
-            <option value="4">行政管理</option>
-            <option value="4">思想政治</option>
-            <option value="4">人力资源管理</option>
+            <option value="包装设计">包装设计</option>
+            <option value="汉语言文学">汉语言文学</option>
+            <option value="生态环境">生态环境</option>
+            <option value="计算机科学与技术">计算机科学与技术</option>
+            <option value="历史学">历史学</option>
+            <option value="应用化学">应用化学</option>
+            <option value="通信工程">通信工程</option>
+            <option value="信息工程">信息工程</option>
+            <option value="测绘工程">测绘工程</option>
+            <option value="动物医学">动物医学</option>
+            <option value="桥梁技术">桥梁技术</option>
+            <option value="行政管理">行政管理</option>
+            <option value="思想政治">思想政治</option>
+            <option value="人力资源管理">人力资源管理</option>
           </select>
         </div>
       </div>
       <div class="layui-form-item">
         <label class="layui-form-label">班级</label>
         <div class="layui-input-block">
-          <select name="city" lay-verify="required">
+          <select name="city">
             <option value="">选择班级</option>
-            <option value="0">1901</option>
-            <option value="1">1902</option>
-            <option value="2">1903</option>
-            <option value="3">1904</option>
-            <option value="4">1905</option>
-            <option value="4">1906</option>
-            <option value="4">2001</option>
-            <option value="4">2002</option>
-            <option value="4">2003</option>
-            <option value="4">2004</option>
-            <option value="4">2005</option>
-            <option value="4">2006</option>
-            <option value="4">2101</option>
-            <option value="4">2102</option>
-            <option value="4">2103</option>
-            <option value="4">2104</option>
-            <option value="4">2105</option>
-            <option value="4">2106</option>
-            <option value="4">2201</option>
-            <option value="4">2202</option>
-            <option value="4">2203</option>
-            <option value="4">2204</option>
-            <option value="4">2205</option>
-            <option value="4">2206</option>
+            <option value="1901">1901</option>
+            <option value="1902">1902</option>
+            <option value="1903">1903</option>
+            <option value="1904">1904</option>
+            <option value="1905">1905</option>
+            <option value="1906">1906</option>
+            <option value="2001">2001</option>
+            <option value="2002">2002</option>
+            <option value="2003">2003</option>
+            <option value="2004">2004</option>
+            <option value="2005">2005</option>
+            <option value="2006">2006</option>
+            <option value="2101">2101</option>
+            <option value="2102">2102</option>
+            <option value="2103">2103</option>
+            <option value="2104">2104</option>
+            <option value="2105">2105</option>
+            <option value="2106">2106</option>
+            <option value="2201">2201</option>
+            <option value="2202">2202</option>
+            <option value="2203">2203</option>
+            <option value="2204">2204</option>
+            <option value="2205">2205</option>
+            <option value="2206">2206</option>
           </select>
         </div>
       </div>
       <div class="layui-form-item">
         <label class="layui-form-label">性别</label>
         <div class="layui-input-block">
-          <select name="city" lay-verify="required">
+          <select name="city">
             <option value="">请选择性别</option>
             <option value="0">男</option>
             <option value="1">女</option>
@@ -106,11 +102,25 @@
         </div>
       </div>
       <div class="layui-form-item">
-        <label class="layui-form-label">宿舍</label>
+        <label class="layui-form-label">楼栋号</label>
         <div class="layui-input-block">
-          <input type="text" name="dorm" required  lay-verify="required" placeholder="xx（楼栋）-xxx（寝室号）" autocomplete="off" class="layui-input">
+          <select name="city">
+            <option value="">请选择楼栋号</option>
+            <option value="1">1栋</option>
+            <option value="2">2栋</option>
+            <option value="3">3栋</option>
+            <option value="4">4栋</option>
+            <option value="5">5栋</option>
+          </select>
         </div>
       </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">寝室号</label>
+        <div class="layui-input-block">
+          <input type="text" name="dorm" placeholder="输入寝室号" autocomplete="off" class="layui-input">
+        </div>
+      </div>
+
     </div>
     <div class="zzz">
   <div class="layui-form-item qq">
@@ -138,7 +148,6 @@
       <th>电话</th>
       <th>学号</th>
       <th>入学时间</th>
-      <th>反馈</th>
       <th>寝室</th>
       <th>密码</th>
       <th>邮箱</th>
@@ -147,14 +156,13 @@
     <tr  th:each="dorm,dormStat : ${changedorm}">
       <td th:text="${dorm.STUDENT_ID}">Onions</td>
       <td th:text="${dorm.STUDENT_NAME}">test@test.com.cn</td>
-      <td th:text="${dorm.BEFORE_DORM_NAME}">yes</td>
+      <td th:text="${dorm.BEFORE_DORM_NAME}">ye s</td>
       <td th:text="${dorm.AFTER_DORM_NAME}">状态变量：index</td>
       <td th:text="${dorm.BEFORE_BUILDING_NAME}">状态变量：count</td>
       <td th:text="${dorm.AFTER_BUIDING_NAME}">状态变量：size</td>
-      <td th:text="${dorm.yes}"></td>
-      <td th:text="${dorm.yes}"></td>
-      <td th:text="${dorm.yes}"></td>
-      <td th:text="${dorm.yes}"></td>
+      <td th:text="${dorm.yes}">15999104602</td>
+      <td th:text="${dorm.yes}">计算机</td>
+      <td th:text="${dorm.yes}">1550178962         </td>
       <td th:text="${dorm.yes}"></td>
       <td th:text="${dorm.yes}"></td>
       <td th:text="${dorm.yes}"></td>
