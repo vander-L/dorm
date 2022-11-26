@@ -8,6 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Controller
@@ -15,10 +17,10 @@ public class RepairController {
     @Autowired
     RepairService repairService;
 
-    @RequestMapping(value = "/toRepair")
-    public String repair(String name, String num, String dorm1, String dorm2, String type, String reason, String note, Date time, HttpServletRequest req){
-        System.out.println(dorm1);
+    @RequestMapping(value = "toRepair")
+    public String repair(String name, String num, String dorm1, String dorm2, String type, String reason, String note, String time, HttpServletRequest req) throws ParseException {
         Repair repair = new Repair();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
         BuildingIdDormName buildingIdDormName = new BuildingIdDormName();
         Long id = Long.parseLong(req.getSession().getAttribute("id").toString());
         Integer buildingId = repairService.getBuildingIdByName(dorm1);
@@ -28,12 +30,13 @@ public class RepairController {
         repair.setNote(note);
         repair.setReason(reason);
         repair.setType(type);
-        repair.setTime(time);
+        Date date = simpleDateFormat.parse(time);
+        repair.setTime(date);
         repair.setName(name);
         repair.setPhone(num);
         repair.setDormId(dormId);
         repairService.insertRepair(repair);
-        return "student/index";
+        return "index";
 
     }
 }
