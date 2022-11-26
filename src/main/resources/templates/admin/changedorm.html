@@ -30,15 +30,16 @@
                 <th>换后楼栋</th>
                 <th>申请</th>
             </tr>
-            <tr  th:each="dorm,dormStat : ${changedorm}">
-                <td th:text="${dorm.STUDENT_ID}">Onions</td>
-                <td th:text="${dorm.STUDENT_NAME}">test@test.com.cn</td>
-                <td th:text="${dorm.BEFORE_DORM_NAME}">yes</td>
-                <td th:text="${dorm.AFTER_DORM_NAME}">状态变量：index</td>
-                <td th:text="${dorm.BEFORE_BUILDING_NAME}">状态变量：count</td>
-                <td th:text="${dorm.AFTER_BUIDING_NAME}">状态变量：size</td>
-                <td th:text="${dorm.yes}">
-                    <form th:if="${dorm.yes}">
+            <tr  th:each="dorm,dormStat : ${changeDorm}">
+                <td th:text="${dorm.getId()}">Onions</td>
+                <td th:text="${dorm.getStudentName()}">test@test.com.cn</td>
+                <td th:text="${dorm.getBeforeDormName()}">yes</td>
+                <td th:text="${dorm.getAfterDormName()}">状态变量：index</td>
+                <td th:text="${dorm.getBeforeBuildingName()}">状态变量：count</td>
+                <td th:text="${dorm.getAfterBuildingName()}">状态变量：size</td>
+                <td>
+                    <span th:text="${dorm.getYes()}" th:if="${dorm.getYes()}!=null"></span>
+                    <form th:if="${dorm.getYes()}==null">
                         <input type="radio" name="agree" value="同意">同意
                         <input type="radio" name="agree" value="拒绝"  checked>拒绝
                     </form>

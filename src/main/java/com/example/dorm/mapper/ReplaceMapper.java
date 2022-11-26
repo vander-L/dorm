@@ -17,4 +17,6 @@ public interface ReplaceMapper extends BaseMapper<Replace> {
     public Integer getDormIdByName(BuildingIdDormName buildingIdDormName);
 
     public List<Dorm> getAllHaveNullDorm(Integer buildingId);
+
+    public List<Replace> selectAll();
 }
