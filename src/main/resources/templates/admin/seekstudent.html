@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>查找修改学生信息</title>
+  <link rel="stylesheet" href="//unpkg.com/layui@2.6.8/dist/css/layui.css">
+  <script src="//unpkg.com/layui@2.6.8/dist/layui.js"></script>
+  <style>
+    .aa{
+      display: flex;
+    }
+    select{
+      width: 20%;
+    }
+    .zzz{
+      display: flex;
+    }
+    .qq{
+      margin: 0 auto;
+    }
+
+  </style>
+</head>
+<body>
+<div>
+  <div class="cx">
+    <span>输入查询</span>
+  </div>
+<form class="layui-form zz" th:action="">
+  <div class="layui-form-item">
+    <div class=" aa">
+      <div class="layui-form-item">
+      <label class="layui-form-label">学号</label>
+        <div class="layui-input-block">
+          <input type="text" name="title" required  lay-verify="required" placeholder="查询姓名" autocomplete="off" class="layui-input">
+        </div>
+        </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">学号</label>
+        <div class="layui-input-block">
+          <input type="text" name="title" required  lay-verify="required" placeholder="查询学号" autocomplete="off" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">专业</label>
+        <div class="layui-input-block">
+          <select name="city" lay-verify="required">
+            <option value="">选择专业</option>
+            <option value="0">包装设计</option>
+            <option value="1">汉语言文学</option>
+            <option value="2">生态环境</option>
+            <option value="3">计算机科学与技术</option>
+            <option value="4">历史学</option>
+            <option value="4">应用化学</option>
+            <option value="4">通信工程</option>
+            <option value="4">信息工程</option>
+            <option value="4">测绘工程</option>
+            <option value="4">动物医学</option>
+            <option value="4">桥梁技术</option>
+            <option value="4">行政管理</option>
+            <option value="4">思想政治</option>
+            <option value="4">人力资源管理</option>
+          </select>
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">班级</label>
+        <div class="layui-input-block">
+          <select name="city" lay-verify="required">
+            <option value="">选择班级</option>
+            <option value="0">1901</option>
+            <option value="1">1902</option>
+            <option value="2">1903</option>
+            <option value="3">1904</option>
+            <option value="4">1905</option>
+            <option value="4">1906</option>
+            <option value="4">2001</option>
+            <option value="4">2002</option>
+            <option value="4">2003</option>
+            <option value="4">2004</option>
+            <option value="4">2005</option>
+            <option value="4">2006</option>
+            <option value="4">2101</option>
+            <option value="4">2102</option>
+            <option value="4">2103</option>
+            <option value="4">2104</option>
+            <option value="4">2105</option>
+            <option value="4">2106</option>
+            <option value="4">2201</option>
+            <option value="4">2202</option>
+            <option value="4">2203</option>
+            <option value="4">2204</option>
+            <option value="4">2205</option>
+            <option value="4">2206</option>
+          </select>
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">性别</label>
+        <div class="layui-input-block">
+          <select name="city" lay-verify="required">
+            <option value="">请选择性别</option>
+            <option value="0">男</option>
+            <option value="1">女</option>
+          </select>
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">宿舍</label>
+        <div class="layui-input-block">
+          <input type="text" name="dorm" required  lay-verify="required" placeholder="xx（楼栋）-xxx（寝室号）" autocomplete="off" class="layui-input">
+        </div>
+      </div>
+    </div>
+    <div class="zzz">
+  <div class="layui-form-item qq">
+    <div class="layui-input-block">
+      <button class="layui-btn" lay-submit lay-filter="formDemo">查询</button>
+      <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+    </div>
+  </div>
+    </div>
+  </div>
+</form>
+</div>
+<div class="xq">
+  <div>
+    <div class="tt" style="text-align: center;font-size: 20px;" ><span>查询结果</span></div>
+  </div>
+  <table class="layui-table">
+    <tr>
+      <th>学号</th>
+      <th>姓名</th>
+      <th>性别</th>
+      <th>班级</th>
+      <th>学院</th>
+      <th>专业</th>
+      <th>电话</th>
+      <th>学号</th>
+      <th>入学时间</th>
+      <th>反馈</th>
+      <th>寝室</th>
+      <th>密码</th>
+      <th>邮箱</th>
+      <th>在校状态</th>
+    </tr>
+    <tr  th:each="dorm,dormStat : ${changedorm}">
+      <td th:text="${dorm.STUDENT_ID}">Onions</td>
+      <td th:text="${dorm.STUDENT_NAME}">test@test.com.cn</td>
+      <td th:text="${dorm.BEFORE_DORM_NAME}">yes</td>
+      <td th:text="${dorm.AFTER_DORM_NAME}">状态变量：index</td>
+      <td th:text="${dorm.BEFORE_BUILDING_NAME}">状态变量：count</td>
+      <td th:text="${dorm.AFTER_BUIDING_NAME}">状态变量：size</td>
+      <td th:text="${dorm.yes}"></td>
+      <td th:text="${dorm.yes}"></td>
+      <td th:text="${dorm.yes}"></td>
+      <td th:text="${dorm.yes}"></td>
+      <td th:text="${dorm.yes}"></td>
+      <td th:text="${dorm.yes}"></td>
+      <td th:text="${dorm.yes}"></td>
+      <td th:text="${dorm.yes}"></td>
+    </tr>
+  </table>
+
+</div>
+
+</body>
+</html>

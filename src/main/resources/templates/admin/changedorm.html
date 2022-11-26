@@ -34,15 +34,15 @@
                 <td th:text="${dorm.STUDENT_ID}">Onions</td>
                 <td th:text="${dorm.STUDENT_NAME}">test@test.com.cn</td>
                 <td th:text="${dorm.BEFORE_DORM_NAME}">yes</td>
-                <th th:text="${dorm.AFTER_DORM_NAME}">状态变量：index</th>
-                <th th:text="${dorm.BEFORE_BUILDING_NAME}">状态变量：count</th>
-                <th th:text="${dorm.AFTER_BUIDING_NAME}">状态变量：size</th>
-                <th th:text="${dorm.yes}">
+                <td th:text="${dorm.AFTER_DORM_NAME}">状态变量：index</td>
+                <td th:text="${dorm.BEFORE_BUILDING_NAME}">状态变量：count</td>
+                <td th:text="${dorm.AFTER_BUIDING_NAME}">状态变量：size</td>
+                <td th:text="${dorm.yes}">
                     <form th:if="${dorm.yes}">
                         <input type="radio" name="agree" value="同意">同意
                         <input type="radio" name="agree" value="拒绝"  checked>拒绝
                     </form>
-                </th>
+                </td>
             </tr>
         </table>
             <div class="layui-form-item">
