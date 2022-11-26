@@ -36,7 +36,7 @@ public class RepairController {
         repair.setPhone(num);
         repair.setDormId(dormId);
         repairService.insertRepair(repair);
-        return "index";
+        return "student/index";
 
     }
 }
