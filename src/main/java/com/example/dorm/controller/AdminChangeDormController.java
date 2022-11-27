@@ -34,7 +34,8 @@ public class AdminChangeDormController {
                 replace.setId(id);
                 replaceService.updateById(replace);
             }
+            return "redirect:changeDorm";
         }
-        return "admin/changedorm";
+        return null;
     }
 }

@@ -23,7 +23,7 @@
         <div class="center-comm">
             <div>
                 <div>
-                    <form action="" class="layui-form">
+                    <form action="" class="layui-form" th:action="@{/toSeekRepair}">
                         <div class="layui-form-item">
                             <label class="layui-form-label">维修编号:</label>
                             <div class="layui-input-inline">
@@ -99,15 +99,15 @@
                             <th>解决情况</th>
                         </tr>
                         <tr th:each="repair : ${repairs}">
-                            <th th:text="${repair.a}"></th>
-                            <th th:text="${repair.a}"></th>
-                            <th th:text="${repair.a}"></th>
-                            <th th:text="${repair.a}"></th>
-                            <th th:text="${repair.a}"></th>
-                            <th th:text="${repair.a}"></th>
-                            <th th:text="${repair.a}"></th>
-                            <th th:text="${repair.a}"></th>
-                            <th th:text="${repair.a}"></th>
+                            <th th:text="${repair.getId()}"></th>
+                            <th th:text="${repair.getName()}"></th>
+                            <th th:text="${repair.getPhone()}"></th>
+                            <th th:text="${repair.getDormId()}"></th>
+                            <th th:text="${repair.getType()}"></th>
+                            <th th:text="${repair.getTime()}"></th>
+                            <th th:text="${repair.getReason()}"></th>
+                            <th th:text="${repair.getNote()}"></th>
+                            <th th:text="${repair.getSolveInfo()}"></th>
                         </tr>
                     </table>
                 </div>
