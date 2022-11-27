@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../../static/css/common.css">
 </head>
 <body >
+<div th:replace="student/common::top-comm"></div>
 <div class="container">
     <div class="body-comm">
         <div th:replace="student/common::left-comm"></div>
@@ -14,7 +15,7 @@
             <form class="layui-form" th:action="@{/toPay}">
                 <div class="layui-form-item">
                     <label class="layui-form-label">楼栋号</label>
-                    <div class="layui-input-block">
+                    <div class="layui-input-inline">
                         <select name="buildingName">
                             <option value="">请选择楼栋号</option>
                             <option value="1栋">1栋</option>
@@ -28,7 +29,7 @@
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label">寝室号</label>
-                    <div class="layui-input-block">
+                    <div class="layui-input-inline">
                        <select name="dormName">
                            <option value="">请选择寝室号</option>
                            <option value="101">101</option>
@@ -65,7 +66,7 @@
                 </div>
             </form>
         </div>
-
+        <div th:replace="student/common::right-comm"></div>
     </div>
 </div>
 
