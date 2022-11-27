@@ -5,6 +5,7 @@ let stuDept = document.getElementById("stuDept")
 let stuBuilding = document.getElementById("stuBuilding")
 let stuDorm = document.getElementById("stuDorm")
 
+
 $.ajax({
     url: '/stuData',
     async: false,
