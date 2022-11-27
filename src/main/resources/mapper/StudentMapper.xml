@@ -2,6 +2,19 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.dorm.entity.Student">
-
+<mapper namespace="com.example.dorm.mapper.StudentMapper">
+<!--    <select id="seekStudent" resultType="student">-->
+<!--        select * from A_STUDENT s,A_BUILDING b,A_DORM d-->
+<!--        where s.DORM_ID = d.ID and d.BUILDING_ID = b.ID-->
+<!--            <if test="id != null">and s.id = #{id}</if>-->
+<!--            <if test="name != ''">and s.name = #{name}</if>-->
+<!--            <if test="pro != ''">and s.pro = #{pro}</if>-->
+<!--            <if test="cla != ''">and s.cla = #{cla}</if>-->
+<!--            <if test="sex != null">and s.sex = #{sex}</if>-->
+<!--            <if test="building != ''">and b.name = #{building}</if>-->
+<!--            <if test="dorm != ''">and d.name = #{dorm}</if>-->
+<!--            <if test="beginTime != null and endTime != null">-->
+<!--                and s.time between #{beginTime} and #{endTime}-->
+<!--            </if>-->
+<!--    </select>-->
 </mapper>

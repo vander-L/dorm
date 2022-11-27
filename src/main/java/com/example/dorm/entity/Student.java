@@ -45,6 +45,10 @@ public class Student {
 
     private String school;
 
+    private String building;
+
+    private String dorm;
+
     public Student(Long id, String name, Integer sex, Integer grade, String dept, String pro, String cla, String phone, Date time, String feedback, Integer dormId ,String email, String school) {
         this.id = id;
         this.name = name;

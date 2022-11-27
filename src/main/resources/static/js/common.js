@@ -2,6 +2,8 @@ let stuName = document.getElementById("stuName")
 let stuId = document.getElementById("stuId")
 let stuCla = document.getElementById("stuCla")
 let stuDept = document.getElementById("stuDept")
+let stuBuilding = document.getElementById("stuBuilding")
+let stuDorm = document.getElementById("stuDorm")
 
 $.ajax({
     url: '/stuData',
@@ -13,6 +15,8 @@ $.ajax({
         stuId.innerHTML = data.id
         stuCla.innerHTML = data.cla
         stuDept.innerHTML = data.dept
+        stuBuilding.innerHTML = data.building
+        stuDorm.innerHTML = data.dorm
     }
 })
 

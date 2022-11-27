@@ -8,4 +8,7 @@ import org.springframework.stereotype.Repository;
 @Mapper
 @Repository
 public interface DormMapper extends BaseMapper<Dorm> {
+
+    public Integer getDormIdByBuildingAndDorm(String building, String dorm);
+
 }

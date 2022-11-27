@@ -3,5 +3,9 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.dorm.mapper.DormMapper">
-
+    <select id="getDormIdByBuildingAndDorm" resultType="integer">
+        select A_DORM.ID
+        from A_BUILDING,A_DORM
+        where A_DORM.BUILDING_ID = A_BUILDING.ID and A_BUILDING.NAME = #{building} and A_Dorm.NAME = #{dorm};
+    </select>
 </mapper>

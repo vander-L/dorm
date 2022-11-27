@@ -22,7 +22,7 @@
     <div th:replace="admin/common::left-comm"></div>
     <div class="center-comm">
       <div>
-        <form class="layui-form">
+        <form class="layui-form" th:action="@{/toSeekStudent}">
           <div class="layui-form-item">
             <label class="layui-form-label">学号:</label>
             <div class="layui-input-inline">
@@ -88,8 +88,8 @@
             <div class="layui-input-inline">
               <select name="sex">
                 <option value="">请选择性别</option>
-                <option value="0">男</option>
-                <option value="1">女</option>
+                <option value="男">男</option>
+                <option value="女">女</option>
               </select>
             </div>
             <label class="layui-form-label">楼栋号:</label>
@@ -138,24 +138,26 @@
             <th>姓名</th>
             <th>性别</th>
             <th>班级</th>
-            <th>学院</th>
             <th>专业</th>
+            <th>学院</th>
             <th>电话</th>
             <th>入学时间</th>
-            <th>寝室编号</th>
+            <th>楼栋号</th>
+            <th>宿舍号</th>
             <th>在校状态</th>
           </tr>
-          <tr th:each="dorm,dormStat : ${changedorm}">
-            <td th:text="${dorm.STUDENT_ID}">Onions</td>
-            <td th:text="${dorm.STUDENT_NAME}">test@test.com.cn</td>
-            <td th:text="${dorm.BEFORE_DORM_NAME}">ye s</td>
-            <td th:text="${dorm.AFTER_DORM_NAME}">状态变量：index</td>
-            <td th:text="${dorm.BEFORE_BUILDING_NAME}">状态变量：count</td>
-            <td th:text="${dorm.AFTER_BUIDING_NAME}">状态变量：size</td>
-            <td th:text="${dorm.yes}">15999104602</td>
-            <td th:text="${dorm.yes}">计算机</td>
-            <td th:text="${dorm.yes}">1550178962</td>
-            <td th:text="${dorm.yes}"></td>
+          <tr th:each="stu : ${students}">
+            <td th:text="${stu.getId()}">Onions</td>
+            <td th:text="${stu.getName()}">test@test.com.cn</td>
+            <td th:text="${stu.getSex()}==1?'男':'女'">ye s</td>
+            <td th:text="${stu.getCla()}">状态变量：index</td>
+            <td th:text="${stu.getPro()}">状态变量：count</td>
+            <td th:text="${stu.getDept()}">状态变量：size</td>
+            <td th:text="${stu.getPhone()}">15999104602</td>
+            <td th:text="${stu.getTime()}">计算机</td>
+            <td th:text="${stu.getBuilding()}">1550178962</td>
+            <td th:text="${stu.getDorm()}"></td>
+            <td th:text="${stu.getSchool()}"></td>
           </tr>
         </table>
       </div>
