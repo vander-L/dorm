@@ -4,6 +4,8 @@ spring:
     url: jdbc:oracle:thin:@//172.30.192.246:1521/dorm
     username: system
     password: Admin123
+  thymeleaf:
+    cache: false
 mybatis-plus:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.example.dorm.entity
