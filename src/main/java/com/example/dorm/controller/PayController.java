@@ -36,6 +36,6 @@ public class PayController {
             dorm1.setElectricity(dorm.getElectricity() + Integer.parseInt(money));
         }
         dormService.updateById(dorm1);
-        return "student/pay";
+        return "student/index";
     }
 }

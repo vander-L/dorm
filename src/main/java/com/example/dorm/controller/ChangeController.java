@@ -38,7 +38,7 @@ public class ChangeController {
         }
 //        System.out.println(student);
         studentService.UpdateById(student);
-        return "redirect:student/index";
+        return "student/index";
     }
 
 
